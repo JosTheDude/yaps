@@ -251,66 +251,77 @@
           </section>
 
           <section class="tab-panel">
-            <div class="main-grid">
-              <div class="main-stack">
-                <section class="panel-card page-intro-card">
-                  <p class="eyebrow">about</p>
-                  <h1 class="page-title">what I actually do</h1>
+            <div class="main-grid about-grid">
+              <div class="main-stack about-stack">
+                <section class="panel-card page-intro-card about-hero-card">
+                  <p class="eyebrow">about me</p>
+                  <h1 class="page-title">my about-board</h1>
                   <p class="page-summary">
-                    build cool stuff
+                    hi! i'm jos! i love to build things. this space is place for
+                    me to share who i am and how i work. i have a similar
+                    whiteboard & stickies all around my room.
                   </p>
                 </section>
 
-                <section class="panel-card">
-                  <h2 class="section-title">identity</h2>
-                  <div class="about-copy">
-                    <p>
-                      local cat
-                    </p>
-                    <p>
-                      meow
-                    </p>
+                <section class="panel-card workspace-board">
+                  <div class="workspace-canvas" data-workspace-canvas aria-label="Workspace board with quick facts">
+                    <article class="whiteboard-card">
+                      <span class="whiteboard-pin" aria-hidden="true"></span>
+                      <p class="whiteboard-label">jos's <i>super cool</i> about board!</p>
+                      <h3 class="whiteboard-title">hi! i'm jos.</h3>
+                      <p class="whiteboard-copy">
+                        the various stickies around the board showcase stuff i specialize in. but to bring it down to
+                        two words,
+                        i love making <b>cool stuff</b>. my work, skills, and focus all build on creating projects that
+                        can scale and be remembered for a long time for my users.
+                      </p>
+                      <p class="whiteboard-copy">
+                        i've worked with multi-million creators like Tubbo, companies like VALORANT, and built my own
+                        projects
+                        from scratch as well. if you're looking for someone to help build or scale your work - reach
+                        out!
+                      </p>
+                      <div class="whiteboard-tags" aria-label="Core strengths">
+                        <span>game dev</span>
+                        <span>ugc</span>
+                        <span>scaling</span>
+                        <span>infrastructure</span>
+                        <span>websites</span>
+                      </div>
+                    </article>
+
+                    <article class="sticky-note sticky-note-gold sticky-note-role" data-sticky-note
+                      data-note-rotate="-4">
+                      <p class="sticky-note-kicker">what i do</p>
+                      <p class="sticky-note-copy">i'm a software & devops engineer. i specialize in java,
+                        kotlin, and typescript. i also love docker & kubernetes.</p>
+                    </article>
+
+                    <article class="sticky-note sticky-note-pink sticky-note-vibe" data-sticky-note
+                      data-note-rotate="5">
+                      <p class="sticky-note-kicker">my personal philosophy</p>
+                      <p class="sticky-note-copy">i obsess over making things pixel-perfect and fun to play.
+                        i believe experiences should be remembered and care deeply about making things memorable.
+                      </p>
+                    </article>
+
+                    <article class="sticky-note sticky-note-blue sticky-note-focus" data-sticky-note
+                      data-note-rotate="-3">
+                      <p class="sticky-note-kicker">some fun facts!</p>
+                      <p class="sticky-note-copy">i have a cat named whiskey. i also love cookies, robots, and reading
+                        webtoons.</p>
+                    </article>
+
+                    <article class="sticky-note sticky-note-mint sticky-note-care" data-sticky-note
+                      data-note-rotate="4">
+                      <p class="sticky-note-kicker">care about</p>
+                      <p class="sticky-note-copy">good ux, reliable infrastructure, and details people actually
+                        remember.</p>
+                    </article>
                   </div>
                 </section>
-
-                <section class="panel-card">
-                  <h2 class="section-title">currently building</h2>
-                  <div class="info-grid">
-                    <article class="info-tile">
-                      <strong>shared network logic</strong>
-                      <p>dweklwqhjl;wqhjkwqwq</p>
-                    </article>
-                    <article class="info-tile">
-                      <strong>plugin infrastructure</strong>
-                      <p>SUPA COOL</p>
-                    </article>
-                    <article class="info-tile">
-                      <strong>ops-facing ui</strong>
-                      <p>oh yeah good ui woo</p>
-                    </article>
-                  </div>
-                </section>
-
-                <aside class="sidebar-stack">
-                  <section class="panel-card sidebar-card">
-                    <h2 class="section-title">active projects</h2>
-                    <ul class="project-list">
-                      <li class="project-item">
-                        <strong>network core</strong>
-                        <span>cross-server systems, shared state, and the glue layer around multiple services</span>
-                      </li>
-                      <li class="project-item">
-                        <strong>plugin suite</strong>
-                        <span>gameplay modules, moderation tools, and server-side quality-of-life systems</span>
-                      </li>
-                      <li class="project-item">
-                        <strong>ops panel</strong>
-                        <span>web tooling for release flow, config handling, and internal operations</span>
-                      </li>
-                    </ul>
-                  </section>
-                </aside>
               </div>
+            </div>
           </section>
 
           <section class="tab-panel">
@@ -663,6 +674,134 @@
   </script>
   <script>
     (() => {
+      const boards = Array.from(document.querySelectorAll("[data-workspace-canvas]"));
+
+      if (!boards.length) {
+        return;
+      }
+
+      const compactLayout = window.matchMedia("(max-width: 720px)");
+      let zIndexSeed = 4;
+
+      const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+      const setNotePosition = (note, board, nextLeft, nextTop) => {
+        const maxLeft = Math.max(0, board.clientWidth - note.offsetWidth);
+        const maxTop = Math.max(0, board.clientHeight - note.offsetHeight);
+
+        note.style.left = `${clamp(nextLeft, 0, maxLeft)}px`;
+        note.style.top = `${clamp(nextTop, 0, maxTop)}px`;
+      };
+
+      const syncBoard = (board) => {
+        const notes = Array.from(board.querySelectorAll("[data-sticky-note]"));
+
+        if (compactLayout.matches) {
+          notes.forEach((note) => {
+            note.classList.remove("is-dragging");
+            note.style.left = "";
+            note.style.top = "";
+            note.style.zIndex = "";
+            delete note.dataset.noteReady;
+          });
+          return;
+        }
+
+        const boardRect = board.getBoundingClientRect();
+
+        notes.forEach((note) => {
+          if (!note.dataset.noteReady || !note.style.left || !note.style.top) {
+            const noteRect = note.getBoundingClientRect();
+
+            note.style.left = `${noteRect.left - boardRect.left}px`;
+            note.style.top = `${noteRect.top - boardRect.top}px`;
+            note.dataset.noteReady = "true";
+          }
+
+          setNotePosition(
+            note,
+            board,
+            Number.parseFloat(note.style.left || "0"),
+            Number.parseFloat(note.style.top || "0")
+          );
+        });
+      };
+
+      boards.forEach((board) => {
+        const notes = Array.from(board.querySelectorAll("[data-sticky-note]"));
+
+        syncBoard(board);
+
+        notes.forEach((note) => {
+          let activePointerId = null;
+          let startLeft = 0;
+          let startTop = 0;
+          let originX = 0;
+          let originY = 0;
+
+          note.addEventListener("pointerdown", (event) => {
+            if (compactLayout.matches || event.button !== 0) {
+              return;
+            }
+
+            activePointerId = event.pointerId;
+            startLeft = Number.parseFloat(note.style.left || "0");
+            startTop = Number.parseFloat(note.style.top || "0");
+            originX = event.clientX;
+            originY = event.clientY;
+            zIndexSeed += 1;
+
+            note.classList.add("is-dragging");
+            note.style.zIndex = String(zIndexSeed);
+            note.setPointerCapture(event.pointerId);
+            event.preventDefault();
+          });
+
+          note.addEventListener("pointermove", (event) => {
+            if (compactLayout.matches || activePointerId !== event.pointerId) {
+              return;
+            }
+
+            const deltaX = event.clientX - originX;
+            const deltaY = event.clientY - originY;
+
+            setNotePosition(note, board, startLeft + deltaX, startTop + deltaY);
+          });
+
+          const stopDragging = (event) => {
+            if (activePointerId !== event.pointerId) {
+              return;
+            }
+
+            note.classList.remove("is-dragging");
+
+            if (note.hasPointerCapture(event.pointerId)) {
+              note.releasePointerCapture(event.pointerId);
+            }
+
+            activePointerId = null;
+          };
+
+          note.addEventListener("pointerup", stopDragging);
+          note.addEventListener("pointercancel", stopDragging);
+        });
+      });
+
+      const handleResize = () => {
+        boards.forEach(syncBoard);
+      };
+
+      window.addEventListener("resize", handleResize);
+
+      if (typeof compactLayout.addEventListener === "function") {
+        compactLayout.addEventListener("change", handleResize);
+      } else if (typeof compactLayout.addListener === "function") {
+        compactLayout.addListener(handleResize);
+      }
+    })();
+  </script>
+  <script>
+    (() => {
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
       const spawnConfetti = (event) => {
@@ -696,6 +835,10 @@
 
       document.addEventListener("pointerdown", (event) => {
         if (event.button !== 0) {
+          return;
+        }
+
+        if (event.target.closest("[data-sticky-note]")) {
           return;
         }
 
