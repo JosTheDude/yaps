@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "portfolio",
+  "name": "yaps",
   "compatibility_date": "2026-03-18",
   "assets": {
     "directory": "./public",
