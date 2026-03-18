@@ -6,7 +6,7 @@ Check it out here: https://jos.gg/
 
 ## Cloudflare Workers
 
-This repo is configured to deploy as a static-assets Cloudflare Worker using [`wrangler.jsonc`](./wrangler.jsonc).
+This repo is configured to deploy as a static-assets Cloudflare Worker using [`workers.toml`](./workers.toml).
 
 ### Local development
 
