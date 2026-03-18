@@ -429,7 +429,7 @@
       </div>
 
       <footer class="footer-banner">
-        <p class="footer-copy">copyright jos.gg 2026. all rights reserved.</p>
+        <p class="footer-copy">copyright jos.gg ~ all rights reserved ~ building cool projects</p>
         <div class="footer-links" aria-label="Footer links">
           <a class="footer-link" href="#tab-home">home</a>
           <a class="footer-link" href="#tab-about">about</a>
@@ -664,30 +664,14 @@
   <script>
     (() => {
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-      const selector = [
-        ".brand-block",
-        ".brand-nav",
-        ".panel-card",
-        ".project-item",
-        ".info-tile",
-        ".principle-item",
-        ".case-study-card",
-        ".badge-tile",
-        ".testimonial-control",
-        ".contact-link",
-        ".footer-banner"
-      ].join(", ");
 
-      const pressables = document.querySelectorAll(selector);
-
-      const spawnConfetti = (event, node) => {
+      const spawnConfetti = (event) => {
         if (reduceMotion.matches) {
           return;
         }
 
-        const rect = node.getBoundingClientRect();
-        const originX = event.clientX ?? rect.left + rect.width / 2;
-        const originY = event.clientY ?? rect.top + rect.height / 2;
+        const originX = event.clientX ?? window.innerWidth / 2;
+        const originY = event.clientY ?? window.innerHeight / 2;
         const palette = ["", " confetti-bit-alt", " confetti-bit-deep"];
 
         for (let index = 0; index < 10; index += 1) {
@@ -710,14 +694,13 @@
         }
       };
 
-      for (const node of pressables) {
-        node.addEventListener("pointerdown", (event) => {
-          if (event.button !== 0) {
-            return;
-          }
-          spawnConfetti(event, node);
-        });
-      }
+      document.addEventListener("pointerdown", (event) => {
+        if (event.button !== 0) {
+          return;
+        }
+
+        spawnConfetti(event);
+      });
     })();
   </script>
 </body>
