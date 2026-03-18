@@ -259,29 +259,21 @@ html:has(#tab-projects:target) .brand-nav-link-projects::after {
 
 .masthead-links {
   display: block;
-  padding: 10px 10px 8px;
-  border: 4px solid rgba(61, 58, 73, 0.9);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 38%),
-    rgba(31, 29, 40, 0.82);
-  box-shadow: 8px 8px 0 rgba(24, 22, 31, 0.45);
+  padding-top: 6px;
   animation: rise-in calc(var(--motion-slow) + 180ms) var(--motion-ease) both;
 }
 
 .masthead-badge-stack {
   display: grid;
   justify-items: end;
-  gap: 6px;
+  gap: 8px;
 }
 
 .masthead-badge-stack .badge-tile {
-  background:
-    linear-gradient(90deg, rgba(213, 142, 245, 0.16) 0 22%, rgba(52, 49, 62, 0.98) 22% 100%);
-  border-color: rgba(94, 92, 110, 0.9);
+  border-color: #17161e;
   box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
-    0 0 0 1px rgba(14, 13, 20, 0.5);
-  color: #f3eef8;
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+    6px 6px 0 rgba(20, 18, 27, 0.38);
   transform-origin: top right;
 }
 
@@ -289,42 +281,16 @@ html:has(#tab-projects:target) .brand-nav-link-projects::after {
 .masthead-badge-stack .badge-tile:focus-visible {
   transform: translateX(-2px);
   box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
-    0 0 0 1px rgba(213, 142, 245, 0.26);
+    inset 0 0 0 1px rgba(255, 255, 255, 0.24),
+    8px 8px 0 rgba(20, 18, 27, 0.32);
 }
 
 .masthead-badge-stack .badge-kicker {
-  color: #d9b2f0;
-  opacity: 0.72;
-}
-
-.masthead-badge-stack .badge-label {
-  color: #f5f2f8;
+  opacity: 0.78;
 }
 
 .masthead-badge-stack .badge-subline {
-  color: #cfc7d7;
-  opacity: 0.74;
-}
-
-.masthead-badge-stack .badge-tile-github {
-  background:
-    linear-gradient(90deg, rgba(245, 242, 248, 0.12) 0 22%, rgba(52, 49, 62, 0.98) 22% 100%);
-}
-
-.masthead-badge-stack .badge-tile-discord {
-  background:
-    linear-gradient(90deg, rgba(155, 96, 204, 0.3) 0 22%, rgba(52, 49, 62, 0.98) 22% 100%);
-}
-
-.masthead-badge-stack .badge-tile-mail {
-  background:
-    linear-gradient(90deg, rgba(255, 156, 197, 0.28) 0 22%, rgba(52, 49, 62, 0.98) 22% 100%);
-}
-
-.masthead-badge-stack .badge-tile-starnova {
-  background:
-    linear-gradient(90deg, rgba(155, 226, 189, 0.24) 0 22%, rgba(52, 49, 62, 0.98) 22% 100%);
+  opacity: 0.84;
 }
 
 .main-grid {
@@ -864,7 +830,7 @@ html:has(#tab-projects:target) .brand-nav-link-projects::after {
 }
 
 .page-intro-card:has(.client-carousel-card) {
-  grid-template-columns: minmax(0, 1fr) minmax(250px, 286px);
+  grid-template-columns: minmax(0, 1fr) minmax(210px, 248px);
   gap: 22px;
   align-items: start;
 }
@@ -922,27 +888,20 @@ html:has(#tab-projects:target) .brand-nav-link-projects::after {
 
 .client-carousel-card {
   display: grid;
-  gap: 12px;
+  gap: 10px;
   align-self: start;
-  min-height: 100%;
-  padding: 14px;
-  border: 4px solid var(--panel-border);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 38%),
-    var(--panel-soft);
-  box-shadow: inset 0 0 0 1px rgba(213, 142, 245, 0.06);
+  justify-items: center;
+  min-width: 0;
+  padding: 8px 4px 2px;
 }
 
 .client-carousel-head {
   display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  align-items: baseline;
+  justify-content: center;
 }
 
 .client-carousel-label,
-.client-carousel-count,
-.client-carousel-item span {
+.client-carousel-count {
   margin: 0;
   font-family: "Silkscreen", monospace;
   text-transform: lowercase;
@@ -953,74 +912,124 @@ html:has(#tab-projects:target) .brand-nav-link-projects::after {
   font-size: 0.62rem;
 }
 
+.client-carousel-window {
+  position: relative;
+  width: 188px;
+  min-height: 126px;
+}
+
+.client-carousel-track {
+  position: relative;
+  min-height: 126px;
+}
+
+.client-carousel-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0.18;
+  transform: translate(-50%, -50%) scale(0.62);
+  transition:
+    opacity var(--motion-base) ease,
+    transform var(--motion-base) var(--motion-ease),
+    filter var(--motion-base) ease;
+  pointer-events: none;
+}
+
+.client-profile-image {
+  display: block;
+  width: 92px;
+  height: 92px;
+  padding: 0;
+  border: 4px solid rgba(213, 142, 245, 0.18);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at top, rgba(213, 142, 245, 0.26), transparent 58%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+    #332f3d;
+  object-fit: cover;
+  box-shadow: 8px 8px 0 rgba(18, 16, 24, 0.24);
+  transition:
+    border-color var(--motion-fast) ease,
+    background-color var(--motion-fast) ease,
+    box-shadow var(--motion-fast) ease;
+}
+
+.client-profile-image-brand {
+  padding: 18px;
+  object-fit: contain;
+  background:
+    radial-gradient(circle at top, rgba(213, 142, 245, 0.18), transparent 58%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+    #332f3d;
+}
+
+.client-carousel-item.is-active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 3;
+  pointer-events: auto;
+}
+
+.client-carousel-item.is-active .client-profile-image {
+  border-color: rgba(213, 142, 245, 0.42);
+  box-shadow: 12px 12px 0 rgba(18, 16, 24, 0.3);
+}
+
+.client-carousel-item.is-prev,
+.client-carousel-item.is-next {
+  opacity: 0.62;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.client-carousel-item.is-prev {
+  transform: translate(-122%, -42%) scale(0.72);
+}
+
+.client-carousel-item.is-next {
+  transform: translate(22%, -42%) scale(0.72);
+}
+
+.client-carousel-item.is-prev .client-profile-image,
+.client-carousel-item.is-next .client-profile-image {
+  filter: saturate(0.76) brightness(0.9);
+}
+
+.client-carousel-readout {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  text-align: center;
+}
+
+.client-carousel-name {
+  margin: 0;
+  color: var(--text);
+  font-family: "Silkscreen", monospace;
+  font-size: 0.82rem;
+  line-height: 1.08;
+  text-transform: lowercase;
+}
+
 .client-carousel-count {
   color: var(--muted);
   font-size: 0.58rem;
 }
 
-.client-carousel-window {
-  position: relative;
-  overflow: hidden;
-  min-height: 120px;
-}
-
-.client-carousel-track {
-  position: relative;
-  min-height: 120px;
-}
-
-.client-carousel-item {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  align-content: center;
-  gap: 8px;
-  padding: 14px;
-  border: 4px solid rgba(213, 142, 245, 0.12);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 65%),
-    rgba(28, 26, 36, 0.72);
-  opacity: 0;
-  transform: translateY(12px);
-  transition:
-    opacity var(--motion-base) ease,
-    transform var(--motion-base) var(--motion-ease),
-    border-color var(--motion-fast) ease;
-}
-
-.client-carousel-item.is-active {
-  opacity: 1;
-  transform: translateY(0);
-  border-color: rgba(213, 142, 245, 0.3);
-}
-
-.client-carousel-item span {
-  color: var(--accent);
-  font-size: 0.55rem;
-}
-
-.client-carousel-item strong {
-  display: block;
-  margin: 0;
-  color: var(--text);
-  font-family: "Silkscreen", monospace;
-  font-size: clamp(0.98rem, 1.3vw, 1.32rem);
-  line-height: 1.04;
-  text-transform: lowercase;
-}
-
 .client-carousel-dots {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
 }
 
 .client-carousel-dot {
-  width: 100%;
-  max-width: 22px;
+  width: 8px;
   height: 8px;
   padding: 0;
   border: 2px solid rgba(213, 142, 245, 0.18);
+  border-radius: 999px;
   background: rgba(255, 255, 255, 0.06);
   cursor: pointer;
   transition:
@@ -2067,10 +2076,7 @@ html:has(#tab-projects:target) .brand-nav-link-projects::after {
   }
 
   .masthead-links {
-    padding: 0;
-    border: none;
-    background: transparent;
-    box-shadow: none;
+    padding-top: 0;
   }
 
   .masthead-badge-stack {
@@ -2216,7 +2222,8 @@ html:has(#tab-projects:target) .brand-nav-link-projects::after {
   }
 
   .client-carousel-card {
-    padding: 12px;
+    justify-items: center;
+    width: 100%;
   }
 
   .project-carousel-slide {
