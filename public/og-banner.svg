@@ -1,0 +1,77 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGlow" x1="85" y1="54" x2="1114" y2="592" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2A1C35"/>
+      <stop offset="0.5" stop-color="#16131F"/>
+      <stop offset="1" stop-color="#0F0D16"/>
+    </linearGradient>
+    <linearGradient id="cardWash" x1="178" y1="165" x2="1018" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#272432"/>
+      <stop offset="1" stop-color="#15131D"/>
+    </linearGradient>
+    <linearGradient id="wordmark" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#F1C4FF"/>
+      <stop offset="1" stop-color="#D98CFF"/>
+    </linearGradient>
+    <filter id="softShadow" x="-40" y="-40" width="1280" height="710" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="20" stdDeviation="32" flood-color="#09080D" flood-opacity="0.48"/>
+    </filter>
+    <pattern id="dotGrid" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="10" height="10" rx="2" fill="#8E88A4" fill-opacity="0.28"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#130F1A"/>
+  <rect x="24" y="24" width="1152" height="582" rx="28" fill="url(#bgGlow)" stroke="#3A2D4B" stroke-width="2"/>
+  <rect x="24" y="24" width="8" height="582" rx="4" fill="#D88BFF"/>
+
+  <circle cx="950" cy="110" r="180" fill="#D88BFF" fill-opacity="0.06"/>
+  <circle cx="290" cy="560" r="220" fill="#7B4C97" fill-opacity="0.08"/>
+
+  <g opacity="0.9">
+    <text x="58" y="96" fill="#9FC0FF" font-size="42" font-family="SF Pro Display, Helvetica Neue, Arial, sans-serif" font-weight="700">jos.gg</text>
+    <text x="58" y="152" fill="#F3EEF8" font-size="34" font-family="SF Pro Display, Helvetica Neue, Arial, sans-serif" font-weight="500">developer + devops engineer</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="58" y="176" width="1084" height="426" rx="22" fill="url(#cardWash)" stroke="#2E2838" stroke-width="2"/>
+  </g>
+
+  <g opacity="0.95">
+    <rect x="88" y="204" width="170" height="72" fill="url(#dotGrid)"/>
+    <rect x="947" y="428" width="118" height="118" fill="url(#dotGrid)"/>
+  </g>
+
+  <path d="M92 505V316L172 191H872L972 348L1074 191H1110V535H92V505Z" fill="#211D29"/>
+  <path d="M92 535L392 535L605 300L746 535H92Z" fill="#1A1721"/>
+  <path d="M1110 191L1110 535L930 535L812 355L944 191L1110 191Z" fill="#191620"/>
+  <path d="M607 300L746 535L509 535L607 300Z" fill="#201B29"/>
+
+  <g opacity="0.26">
+    <text x="770" y="286" fill="#9689AB" font-size="22" font-family="SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace">deploy / operate / design / scale / repeat</text>
+    <text x="760" y="318" fill="#9689AB" font-size="22" font-family="SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace">systems / tools / infra / games / release flow</text>
+    <text x="748" y="350" fill="#9689AB" font-size="22" font-family="SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace">interfaces / ops / networks / uptime / delivery</text>
+    <text x="734" y="382" fill="#9689AB" font-size="22" font-family="SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace">clarity / rhythm / reliability / maintenance / trust</text>
+    <text x="722" y="414" fill="#9689AB" font-size="22" font-family="SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace">service edges / tooling / handoff / observability / flow</text>
+  </g>
+
+  <g opacity="0.94">
+    <text x="472" y="284" fill="#C8BDD6" font-size="34" font-family="SF Pro Display, Helvetica Neue, Arial, sans-serif" font-weight="600">systems for games, tools, and infrastructure</text>
+    <path d="M469 304H1090V298H469V304Z" fill="#B8A7CB"/>
+    <path d="M1088 298H1094V362H1088V298Z" fill="#B8A7CB"/>
+  </g>
+
+  <g opacity="0.38">
+    <circle cx="348" cy="392" r="24" fill="#11101A" stroke="#2B2736" stroke-width="6"/>
+    <circle cx="450" cy="392" r="24" fill="#11101A" stroke="#2B2736" stroke-width="6"/>
+    <circle cx="552" cy="392" r="24" fill="#11101A" stroke="#2B2736" stroke-width="6"/>
+  </g>
+
+  <g>
+    <path d="M118 466H126V540H452V548H118V466Z" fill="#EFE7F7"/>
+    <text x="150" y="518" fill="url(#wordmark)" font-size="92" font-family="SF Pro Display, Helvetica Neue, Arial, sans-serif" font-weight="800" letter-spacing="-3">jos.gg</text>
+    <path d="M149 557H492V563H149V557Z" fill="#D88BFF"/>
+  </g>
+
+  <text x="730" y="565" fill="#D6C9E5" font-size="26" font-family="SF Pro Display, Helvetica Neue, Arial, sans-serif" font-weight="500">clean systems, sharp tooling, less noise</text>
+</svg>
