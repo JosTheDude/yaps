@@ -1,0 +1,13 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "packageManager": "bun@1.1.34",
+  "scripts": {
+    "cf:whoami": "wrangler whoami",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.75.0"
+  }
+}
