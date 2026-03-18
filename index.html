@@ -1,33 +1,71 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>jos.gg</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Silkscreen:wght@400;700&display=swap"
-      rel="stylesheet"
-    >
-    <link rel="stylesheet" href="./styles.css">
-  </head>
-  <body>
-    <div class="page-shell">
-      <main class="site-layout">
-        <div class="tab-rail" aria-label="Primary tabs">
-          <section class="tab-panel" id="home">
-            <header class="masthead-card">
-              <div class="brand-block">
-                <a class="brand-mark" href="#home">jos.gg</a>
-              </div>
-              <nav class="brand-nav" aria-label="Primary">
-                <a class="brand-nav-link brand-nav-link-active" href="#home">home</a>
-                <a class="brand-nav-link" href="#about">about</a>
-                <a class="brand-nav-link" href="#projects">projects</a>
-              </nav>
-            </header>
 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jos.gg</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Silkscreen:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <span class="tab-anchor" id="tab-home" aria-hidden="true"></span>
+  <span class="tab-anchor" id="tab-about" aria-hidden="true"></span>
+  <span class="tab-anchor" id="tab-projects" aria-hidden="true"></span>
+
+  <div class="page-shell">
+    <main class="site-layout">
+      <header class="masthead-card">
+        <div class="masthead-main">
+          <div class="brand-block">
+            <a class="brand-mark" href="#tab-home">jos.gg</a>
+          </div>
+          <nav class="brand-nav" aria-label="Primary">
+            <a class="brand-nav-link brand-nav-link-home brand-nav-link-active" href="#tab-home">home</a>
+            <a class="brand-nav-link brand-nav-link-about" href="#tab-about">about</a>
+            <a class="brand-nav-link brand-nav-link-projects" href="#tab-projects">projects</a>
+          </nav>
+        </div>
+        <div class="masthead-links" aria-label="External links">
+          <a class="masthead-link" href="https://github.com/JosTheDude" target="_blank" rel="noreferrer">
+            <span class="masthead-link-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="presentation" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 2C6.48 2 2 6.58 2 12.22c0 4.5 2.87 8.31 6.84 9.66.5.1.68-.22.68-.49 0-.24-.01-1.05-.01-1.91-2.78.61-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.56 2.35 1.11 2.92.85.09-.67.35-1.11.63-1.37-2.22-.26-4.56-1.15-4.56-5.1 0-1.13.39-2.05 1.03-2.77-.1-.26-.45-1.3.1-2.72 0 0 .84-.28 2.75 1.06A9.3 9.3 0 0 1 12 6.84a9.3 9.3 0 0 1 2.5.35c1.9-1.34 2.74-1.06 2.74-1.06.55 1.42.2 2.46.1 2.72.64.72 1.03 1.64 1.03 2.77 0 3.96-2.35 4.84-4.59 5.09.36.32.69.95.69 1.92 0 1.39-.01 2.5-.01 2.84 0 .27.18.6.69.49A10.24 10.24 0 0 0 22 12.22C22 6.58 17.52 2 12 2Z"
+                  fill="currentColor" />
+              </svg>
+            </span>
+            <span class="masthead-link-text">github</span>
+          </a>
+          <a class="masthead-link" href="https://discord.com/users/481933134858944512" target="_blank" rel="noreferrer">
+            <span class="masthead-link-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="presentation" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.32 4.37A16.55 16.55 0 0 0 16.24 3l-.2.4a11.4 11.4 0 0 1 3.47 1.4 13.22 13.22 0 0 0-7.5-2.1 13.22 13.22 0 0 0-7.5 2.1 11.4 11.4 0 0 1 3.47-1.4L7.78 3A16.55 16.55 0 0 0 3.7 4.37C1.13 8.22.44 11.97.8 15.67a16.88 16.88 0 0 0 5.05 2.56l1.09-1.51c-.6-.23-1.16-.52-1.68-.87.14.1.29.2.44.29 2.03 1.2 4.24 1.53 6.3 1.53 2.06 0 4.27-.33 6.3-1.53.15-.09.3-.19.44-.29-.52.35-1.08.64-1.68.87l1.09 1.51a16.88 16.88 0 0 0 5.05-2.56c.42-4.28-.72-8-2.9-11.3ZM9.46 13.4c-.97 0-1.76-.91-1.76-2.03s.78-2.03 1.76-2.03c.99 0 1.77.92 1.76 2.03 0 1.12-.78 2.03-1.76 2.03Zm5.08 0c-.97 0-1.76-.91-1.76-2.03s.78-2.03 1.76-2.03c.99 0 1.77.92 1.76 2.03 0 1.12-.77 2.03-1.76 2.03Z"
+                  fill="currentColor" />
+              </svg>
+            </span>
+            <span class="masthead-link-text">discord</span>
+          </a>
+          <a class="masthead-link" href="mailto:me@jos.gg">
+            <span class="masthead-link-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="presentation" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M3 6.75A1.75 1.75 0 0 1 4.75 5h14.5A1.75 1.75 0 0 1 21 6.75v10.5A1.75 1.75 0 0 1 19.25 19H4.75A1.75 1.75 0 0 1 3 17.25V6.75Zm1.83-.25L12 11.86 19.17 6.5H4.83Zm14.67 1.88-6.9 5.15a1 1 0 0 1-1.2 0L4.5 8.38v8.87c0 .14.11.25.25.25h14.5c.14 0 .25-.11.25-.25V8.38Z"
+                  fill="currentColor" />
+              </svg>
+            </span>
+            <span class="masthead-link-text">email</span>
+          </a>
+        </div>
+      </header>
+
+      <div class="tab-stage">
+        <div class="tab-track">
+          <section class="tab-panel">
             <div class="main-grid">
               <div class="main-stack">
                 <section class="panel-card intro-card">
@@ -35,42 +73,37 @@
                     <div class="avatar-ring">
                       <div class="avatar-core">J</div>
                     </div>
-                    <span class="avatar-badge">eng</span>
+                    <span class="avatar-badge">cat</span>
                   </div>
 
                   <div class="intro-copy">
-                    <h1 class="intro-title">hi, i'm <span>jos</span>!</h1>
+                    <h1 class="intro-title">hi, i'm <span>jos!</span></h1>
                     <p class="intro-text">
-                      i'm a minecraft server engineer building plugins, infrastructure,
-                      and polished frontend systems for the web.
+                      i'm a developer & devops engineer.
                     </p>
                     <div class="intro-links">
-                      <a href="#about">about me</a>
-                      <a href="#projects">active work</a>
-                      <a href="#projects-featured">featured systems</a>
+                      <a href="#tab-about">about me</a>
+                      <a href="#tab-projects">my projects</a>
+                      <a href="https://starnova.dev/">contacts</a>
                     </div>
                   </div>
                 </section>
 
-                <section class="panel-card notice-card">
-                  <div class="notice-icon" aria-hidden="true">!</div>
-                  <p class="notice-text">
-                    I like boxy interfaces, clear hierarchy, and systems that feel engineered.
-                    Most of my day-to-day work is Minecraft network tooling, backend logic,
-                    and the infrastructure around it.
-                  </p>
-                </section>
-
                 <section class="panel-card about-card">
-                  <h2 class="section-title">current focus</h2>
+                  <h2 class="section-title">quick intro!</h2>
                   <div class="about-copy">
                     <p>
-                      Building server-side systems for Minecraft is the core of what I do:
-                      plugin architecture, network features, deployment flows, and reliability work.
+                      First off, hi! My name is Jos, and I love to build things.
+                      I both develop and own projects within
+                      spaces like Minecraft, Roblox, and Fortnite. (see more <a href="#tab-projects">here</a>)
                     </p>
                     <p>
-                      I also care a lot about how things look on the surface, so this site leans
-                      into a blocky UI language instead of feeling like a generic portfolio template.
+                      I obsess over creating experiences that are beautiful, easy-to-pickup,
+                      and unique to play. I also love cookies & have a cat.
+                    </p>
+                    <p>
+                      If you'd like to chat about a project or just want to say hi, feel free to reach out! (cat
+                      photos are also loved!)
                     </p>
                   </div>
                 </section>
@@ -78,52 +111,130 @@
                 <section class="panel-card badges-card">
                   <h2 class="section-title">links</h2>
                   <div class="badge-grid">
-                    <a class="badge-tile badge-primary" href="#home">jos.gg</a>
-                    <a class="badge-tile" href="#projects">plugin-work</a>
-                    <a class="badge-tile" href="#about">about-me</a>
-                    <a class="badge-tile" href="#projects-featured">featured</a>
-                    <a class="badge-tile" href="#about-principles">principles</a>
-                    <a class="badge-tile" href="#projects-featured">case-study</a>
-                    <a class="badge-tile" href="#about-current">now-building</a>
-                    <a class="badge-tile" href="#projects-systems">systems</a>
+                    <a class="badge-tile badge-primary" href="#tab-home">jos.gg</a>
+                    <a class="badge-tile" href="#tab-projects">plugin-work</a>
+                    <a class="badge-tile" href="#tab-about">about-me</a>
+                    <a class="badge-tile" href="#tab-projects">featured</a>
+                    <a class="badge-tile" href="#tab-about">principles</a>
+                    <a class="badge-tile" href="#tab-projects">case-study</a>
+                    <a class="badge-tile" href="#tab-about">now-building</a>
+                    <a class="badge-tile" href="#tab-projects">systems</a>
                   </div>
                 </section>
               </div>
 
               <aside class="sidebar-stack">
-                <section class="panel-card sidebar-card">
-                  <h2 class="section-title">active projects</h2>
-                  <ul class="project-list">
-                    <li class="project-item">
-                      <strong>network core</strong>
-                      <span>proxy and shared systems for a minecraft server stack</span>
-                    </li>
-                    <li class="project-item">
-                      <strong>plugin suite</strong>
-                      <span>custom gameplay, moderation, and server-side tooling</span>
-                    </li>
-                    <li class="project-item">
-                      <strong>ops panel</strong>
-                      <span>internal web ui for config, rollout, and maintenance tasks</span>
-                    </li>
-                  </ul>
+                <section class="panel-card sidebar-card status-card" data-lanyard-root>
+                  <div class="status-screen">
+                    <div class="status-screen-head">
+                      <div class="status-avatar-wrap">
+                        <img class="status-avatar" data-lanyard-avatar alt="Discord avatar"
+                          src="https://cdn.discordapp.com/embed/avatars/0.png">
+                        <span class="status-dot" data-lanyard-dot="idle"></span>
+                      </div>
+                      <div class="status-head-copy">
+                        <div class="status-ident">
+                          <p class="status-name" data-lanyard-name>josbot</p>
+                          <p class="status-handle" data-lanyard-handle>@josbot</p>
+                        </div>
+                        <p class="status-line" data-lanyard-line>connecting to lanyard...</p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="panel-card sidebar-card testimonial-card" data-testimonial-carousel
+                  aria-label="Testimonials">
+                  <div class="testimonial-card-head">
+                    <div>
+                      <h2 class="section-title">testimonials</h2>
+                      <p class="testimonial-lede">a few recent notes from people i’ve built with.</p>
+                    </div>
+                    <p class="testimonial-count" data-testimonial-count>01/03</p>
+                  </div>
+                  <div class="testimonial-screen">
+                    <div class="testimonial-slides">
+                      <article class="testimonial-slide is-active" data-testimonial-slide>
+                        <p class="testimonial-quote">
+                          “jos took over a messy plugin stack and made it feel deliberate. releases stopped
+                          being stressful because the systems finally behaved like one product.”
+                        </p>
+                        <div class="testimonial-source">
+                          <strong>network owner</strong>
+                          <span>survival server rollout</span>
+                        </div>
+                        <div class="testimonial-tags" aria-label="Testimonial topics">
+                          <span class="testimonial-tag">plugin architecture</span>
+                          <span class="testimonial-tag">release flow</span>
+                        </div>
+                      </article>
+                      <article class="testimonial-slide" data-testimonial-slide aria-hidden="true">
+                        <p class="testimonial-quote">
+                          “what stood out was how quickly jos found the weak points in our tooling. the fixes
+                          were practical, clean, and obvious for the team to keep using.”
+                        </p>
+                        <div class="testimonial-source">
+                          <strong>ops lead</strong>
+                          <span>internal staff tooling</span>
+                        </div>
+                        <div class="testimonial-tags" aria-label="Testimonial topics">
+                          <span class="testimonial-tag">staff ux</span>
+                          <span class="testimonial-tag">maintenance</span>
+                        </div>
+                      </article>
+                      <article class="testimonial-slide" data-testimonial-slide aria-hidden="true">
+                        <p class="testimonial-quote">
+                          “jos has a rare mix of backend discipline and frontend taste. the result wasn’t just
+                          stable, it actually looked intentional and was easier to operate.”
+                        </p>
+                        <div class="testimonial-source">
+                          <strong>studio founder</strong>
+                          <span>game systems + web layer</span>
+                        </div>
+                        <div class="testimonial-tags" aria-label="Testimonial topics">
+                          <span class="testimonial-tag">full-stack delivery</span>
+                          <span class="testimonial-tag">system clarity</span>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+                  <div class="testimonial-controls">
+                    <button class="testimonial-control" type="button" data-testimonial-prev
+                      aria-label="Show previous testimonial">
+                      prev
+                    </button>
+                    <div class="testimonial-dots" aria-label="Select testimonial">
+                      <button class="testimonial-dot is-active" type="button" data-testimonial-dot
+                        data-testimonial-index="0" aria-label="Show testimonial 1" aria-pressed="true"></button>
+                      <button class="testimonial-dot" type="button" data-testimonial-dot data-testimonial-index="1"
+                        aria-label="Show testimonial 2" aria-pressed="false"></button>
+                      <button class="testimonial-dot" type="button" data-testimonial-dot data-testimonial-index="2"
+                        aria-label="Show testimonial 3" aria-pressed="false"></button>
+                    </div>
+                    <button class="testimonial-control" type="button" data-testimonial-next
+                      aria-label="Show next testimonial">
+                      next
+                    </button>
+                  </div>
+                </section>
+                <section class="panel-card contact-card">
+                  <h2 class="section-title">send me a message</h2>
+                  <p class="contact-copy">
+                    want to talk about a project, a role, or something i'm building?
+                  </p>
+                  <div class="contact-actions">
+                    <a class="contact-link" href="https://discord.com/" target="_blank" rel="noreferrer">
+                      discord
+                    </a>
+                    <a class="contact-link contact-link-primary" href="mailto:hello@jos.gg">
+                      email
+                    </a>
+                  </div>
                 </section>
               </aside>
             </div>
           </section>
 
-          <section class="tab-panel" id="about">
-            <header class="masthead-card">
-              <div class="brand-block">
-                <a class="brand-mark" href="#home">jos.gg</a>
-              </div>
-              <nav class="brand-nav" aria-label="Primary">
-                <a class="brand-nav-link" href="#home">home</a>
-                <a class="brand-nav-link brand-nav-link-active" href="#about">about</a>
-                <a class="brand-nav-link" href="#projects">projects</a>
-              </nav>
-            </header>
-
+          <section class="tab-panel">
             <div class="main-grid">
               <div class="main-stack">
                 <section class="panel-card page-intro-card">
@@ -151,7 +262,7 @@
                   </div>
                 </section>
 
-                <section class="panel-card" id="about-current">
+                <section class="panel-card">
                   <h2 class="section-title">currently building</h2>
                   <div class="info-grid">
                     <article class="info-tile">
@@ -169,7 +280,7 @@
                   </div>
                 </section>
 
-                <section class="panel-card" id="about-principles">
+                <section class="panel-card">
                   <h2 class="section-title">operating principles</h2>
                   <div class="principles-list">
                     <article class="principle-item">
@@ -210,18 +321,7 @@
             </div>
           </section>
 
-          <section class="tab-panel" id="projects">
-            <header class="masthead-card">
-              <div class="brand-block">
-                <a class="brand-mark" href="#home">jos.gg</a>
-              </div>
-              <nav class="brand-nav" aria-label="Primary">
-                <a class="brand-nav-link" href="#home">home</a>
-                <a class="brand-nav-link" href="#about">about</a>
-                <a class="brand-nav-link brand-nav-link-active" href="#projects">projects</a>
-              </nav>
-            </header>
-
+          <section class="tab-panel">
             <div class="main-grid">
               <div class="main-stack">
                 <section class="panel-card page-intro-card">
@@ -233,7 +333,7 @@
                   </p>
                 </section>
 
-                <section class="panel-card" id="projects-featured">
+                <section class="panel-card">
                   <h2 class="section-title">featured systems</h2>
                   <div class="case-study-list">
                     <article class="case-study-card">
@@ -247,8 +347,14 @@
                         and not making each server solve the same problems differently.
                       </p>
                       <dl class="case-study-meta">
-                        <div><dt>focus</dt><dd>shared state, service boundaries, rollout flow</dd></div>
-                        <div><dt>hard part</dt><dd>keeping behavior predictable across multiple moving pieces</dd></div>
+                        <div>
+                          <dt>focus</dt>
+                          <dd>shared state, service boundaries, rollout flow</dd>
+                        </div>
+                        <div>
+                          <dt>hard part</dt>
+                          <dd>keeping behavior predictable across multiple moving pieces</dd>
+                        </div>
                       </dl>
                     </article>
 
@@ -263,8 +369,14 @@
                         of unrelated features stitched together.
                       </p>
                       <dl class="case-study-meta">
-                        <div><dt>focus</dt><dd>modularity, config strategy, admin usability</dd></div>
-                        <div><dt>hard part</dt><dd>scaling features without turning maintenance into chaos</dd></div>
+                        <div>
+                          <dt>focus</dt>
+                          <dd>modularity, config strategy, admin usability</dd>
+                        </div>
+                        <div>
+                          <dt>hard part</dt>
+                          <dd>scaling features without turning maintenance into chaos</dd>
+                        </div>
                       </dl>
                     </article>
 
@@ -275,17 +387,24 @@
                       </div>
                       <p>
                         A web surface for maintenance and operational tasks. This is the kind of work that makes
-                        a site memorable if it’s shown properly: not generic dashboards, but tools tied to actual workflows.
+                        a site memorable if it’s shown properly: not generic dashboards, but tools tied to actual
+                        workflows.
                       </p>
                       <dl class="case-study-meta">
-                        <div><dt>focus</dt><dd>release flow, config editing, internal clarity</dd></div>
-                        <div><dt>hard part</dt><dd>designing tools staff can trust under pressure</dd></div>
+                        <div>
+                          <dt>focus</dt>
+                          <dd>release flow, config editing, internal clarity</dd>
+                        </div>
+                        <div>
+                          <dt>hard part</dt>
+                          <dd>designing tools staff can trust under pressure</dd>
+                        </div>
                       </dl>
                     </article>
                   </div>
                 </section>
 
-                <section class="panel-card" id="projects-systems">
+                <section class="panel-card">
                   <h2 class="section-title">selected work</h2>
                   <div class="about-copy">
                     <p>
@@ -322,7 +441,300 @@
             </div>
           </section>
         </div>
-      </main>
-    </div>
-  </body>
+      </div>
+
+      <footer class="footer-banner">
+        <p class="footer-copy">copyright jos.gg 2026 - building projects that last a lifetime</p>
+        <div class="footer-links" aria-label="Footer links">
+          <a class="footer-link" href="#tab-home">home</a>
+          <a class="footer-link" href="#tab-about">about</a>
+          <a class="footer-link" href="#tab-projects">projects</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+  <script>
+    (() => {
+      const root = document.querySelector("[data-lanyard-root]");
+
+      if (!root) {
+        return;
+      }
+
+      const userId = "481933134858944512";
+      const lineNode = root.querySelector("[data-lanyard-line]");
+      const nameNode = root.querySelector("[data-lanyard-name]");
+      const handleNode = root.querySelector("[data-lanyard-handle]");
+      const avatarNode = root.querySelector("[data-lanyard-avatar]");
+      const dotNode = root.querySelector("[data-lanyard-dot]");
+
+      const statusLabels = {
+        online: "online",
+        idle: "idle",
+        dnd: "dnd",
+        offline: "offline"
+      };
+
+      const getDevice = (data) => {
+        if (data.active_on_discord_desktop) {
+          return "desktop";
+        }
+
+        if (data.active_on_discord_web) {
+          return "web";
+        }
+
+        if (data.active_on_discord_mobile) {
+          return "mobile";
+        }
+
+        return "n/a";
+      };
+
+      const getActivity = (data) => {
+        if (data.listening_to_spotify && data.spotify?.song) {
+          return `spotify: ${data.spotify.song}`;
+        }
+
+        const [activity] = data.activities ?? [];
+
+        if (!activity) {
+          return "none";
+        }
+
+        return activity.name || "custom status";
+      };
+
+      const getHeadline = (data) => {
+        if ((data.discord_status || "offline") === "offline") {
+          return "currently offline";
+        }
+
+        if (data.listening_to_spotify && data.spotify?.song && data.spotify?.artist) {
+          return `listening to ${data.spotify.song} by ${data.spotify.artist}`;
+        }
+
+        const [activity] = data.activities ?? [];
+
+        if (activity?.details) {
+          return activity.details;
+        }
+
+        if (activity?.state) {
+          return activity.state;
+        }
+
+        return statusLabels[data.discord_status] || "online";
+      };
+
+      const applyPresence = (data) => {
+        const user = data.discord_user ?? {};
+        const displayName = user.display_name || user.global_name || user.username || "discord user";
+        const username = user.username || "unknown";
+        const avatar = user.avatar
+          ? `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png?size=128`
+          : "https://cdn.discordapp.com/embed/avatars/0.png";
+        const device = getDevice(data);
+        const activity = getActivity(data);
+
+        nameNode.textContent = displayName.toLowerCase();
+        handleNode.textContent = `@${username}`;
+        lineNode.textContent = getHeadline(data).toLowerCase();
+        avatarNode.src = avatar;
+        avatarNode.alt = `${displayName} Discord avatar`;
+        dotNode.dataset.lanyardDot = data.discord_status || "offline";
+      };
+
+      const applyError = () => {
+        lineNode.textContent = "lanyard unavailable right now.";
+        dotNode.dataset.lanyardDot = "offline";
+      };
+
+      const syncPresence = async () => {
+        try {
+          const response = await fetch(`https://api.lanyard.rest/v1/users/${userId}`);
+
+          if (!response.ok) {
+            throw new Error(`lanyard request failed: ${response.status}`);
+          }
+
+          const payload = await response.json();
+
+          if (!payload.success || !payload.data) {
+            throw new Error("lanyard payload missing data");
+          }
+
+          applyPresence(payload.data);
+        } catch (error) {
+          applyError();
+        }
+      };
+
+      syncPresence();
+      window.setInterval(syncPresence, 30000);
+    })();
+  </script>
+  <script>
+    (() => {
+      const carousel = document.querySelector("[data-testimonial-carousel]");
+
+      if (!carousel) {
+        return;
+      }
+
+      const slides = Array.from(carousel.querySelectorAll("[data-testimonial-slide]"));
+      const dots = Array.from(carousel.querySelectorAll("[data-testimonial-dot]"));
+      const countNode = carousel.querySelector("[data-testimonial-count]");
+      const prevButton = carousel.querySelector("[data-testimonial-prev]");
+      const nextButton = carousel.querySelector("[data-testimonial-next]");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const total = slides.length;
+      const formatCount = (value) => String(value).padStart(2, "0");
+      let activeIndex = 0;
+      let rotationTimer = 0;
+
+      const stopRotation = () => {
+        if (!rotationTimer) {
+          return;
+        }
+
+        window.clearInterval(rotationTimer);
+        rotationTimer = 0;
+      };
+
+      const updateSlide = (nextIndex) => {
+        activeIndex = (nextIndex + total) % total;
+
+        slides.forEach((slide, index) => {
+          const isActive = index === activeIndex;
+
+          slide.classList.toggle("is-active", isActive);
+          slide.setAttribute("aria-hidden", isActive ? "false" : "true");
+        });
+
+        dots.forEach((dot, index) => {
+          const isActive = index === activeIndex;
+
+          dot.classList.toggle("is-active", isActive);
+          dot.setAttribute("aria-pressed", isActive ? "true" : "false");
+        });
+
+        if (countNode) {
+          countNode.textContent = `${formatCount(activeIndex + 1)}/${formatCount(total)}`;
+        }
+      };
+
+      const startRotation = () => {
+        stopRotation();
+
+        if (reduceMotion.matches || total < 2) {
+          return;
+        }
+
+        rotationTimer = window.setInterval(() => {
+          updateSlide(activeIndex + 1);
+        }, 5600);
+      };
+
+      prevButton?.addEventListener("click", () => {
+        updateSlide(activeIndex - 1);
+        startRotation();
+      });
+
+      nextButton?.addEventListener("click", () => {
+        updateSlide(activeIndex + 1);
+        startRotation();
+      });
+
+      dots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          updateSlide(Number(dot.dataset.testimonialIndex || "0"));
+          startRotation();
+        });
+      });
+
+      carousel.addEventListener("pointerenter", stopRotation);
+      carousel.addEventListener("pointerleave", startRotation);
+      carousel.addEventListener("focusin", stopRotation);
+      carousel.addEventListener("focusout", (event) => {
+        if (!carousel.contains(event.relatedTarget)) {
+          startRotation();
+        }
+      });
+
+      const handleMotionChange = () => {
+        startRotation();
+      };
+
+      if (typeof reduceMotion.addEventListener === "function") {
+        reduceMotion.addEventListener("change", handleMotionChange);
+      } else if (typeof reduceMotion.addListener === "function") {
+        reduceMotion.addListener(handleMotionChange);
+      }
+
+      updateSlide(0);
+      startRotation();
+    })();
+  </script>
+  <script>
+    (() => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const selector = [
+        ".brand-block",
+        ".brand-nav",
+        ".panel-card",
+        ".project-item",
+        ".info-tile",
+        ".principle-item",
+        ".case-study-card",
+        ".badge-tile",
+        ".testimonial-control",
+        ".contact-link",
+        ".footer-banner"
+      ].join(", ");
+
+      const pressables = document.querySelectorAll(selector);
+
+      const spawnConfetti = (event, node) => {
+        if (reduceMotion.matches) {
+          return;
+        }
+
+        const rect = node.getBoundingClientRect();
+        const originX = event.clientX ?? rect.left + rect.width / 2;
+        const originY = event.clientY ?? rect.top + rect.height / 2;
+        const palette = ["", " confetti-bit-alt", " confetti-bit-deep"];
+
+        for (let index = 0; index < 10; index += 1) {
+          const bit = document.createElement("span");
+          const angle = (Math.PI * 2 * index) / 10 + Math.random() * 0.35;
+          const distance = 22 + Math.random() * 30;
+          const offsetX = `${originX}px`;
+          const offsetY = `${originY}px`;
+          const deltaX = `${Math.cos(angle) * distance}px`;
+          const deltaY = `${Math.sin(angle) * distance - 12}px`;
+
+          bit.className = `confetti-bit${palette[index % palette.length]}`;
+          bit.style.setProperty("--confetti-x", offsetX);
+          bit.style.setProperty("--confetti-y", offsetY);
+          bit.style.setProperty("--confetti-dx", deltaX);
+          bit.style.setProperty("--confetti-dy", deltaY);
+          bit.style.setProperty("--confetti-rot", `${(Math.random() * 180 - 90).toFixed(2)}deg`);
+          document.body.append(bit);
+          window.setTimeout(() => bit.remove(), 700);
+        }
+      };
+
+      for (const node of pressables) {
+        node.addEventListener("pointerdown", (event) => {
+          if (event.button !== 0) {
+            return;
+          }
+          spawnConfetti(event, node);
+        });
+      }
+    })();
+  </script>
+</body>
+
 </html>
