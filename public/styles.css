@@ -1036,14 +1036,10 @@ html:has(#tab-projects:target) .brand-nav-link-projects::after {
   justify-content: center;
 }
 
-.client-carousel-label,
-.client-carousel-name {
+.client-carousel-label {
   margin: 0;
   font-family: "Silkscreen", monospace;
   text-transform: lowercase;
-}
-
-.client-carousel-label {
   color: var(--accent);
   font-size: 0.62rem;
 }
@@ -1140,9 +1136,17 @@ html:has(#tab-projects:target) .brand-nav-link-projects::after {
 .client-carousel-name {
   margin: 0;
   color: var(--text);
+  font-family: "Silkscreen", monospace;
   font-size: 0.82rem;
   line-height: 1.08;
   letter-spacing: 0.04em;
+  text-transform: lowercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .client-carousel-item {
+    transition: none;
+  }
 }
 
 .active-projects-card {
@@ -1568,22 +1572,104 @@ html:has(#tab-projects:target) .brand-nav-link-projects::after {
 }
 
 .about-stack {
-  gap: 20px;
-}
-
-.about-hero-card {
-  gap: 12px;
+  gap: 0;
 }
 
 .workspace-board {
-  padding: 12px;
+  display: grid;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.workspace-board-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 22px 18px;
+  border-bottom: 4px solid rgba(255, 255, 255, 0.07);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 72%),
+    linear-gradient(90deg, rgba(213, 142, 245, 0.08), transparent 36%),
+    #2a2733;
+}
+
+.workspace-board-head-copy {
+  display: grid;
+  gap: 8px;
+}
+
+.workspace-board-actions {
+  display: grid;
+  justify-items: end;
+  gap: 8px;
+}
+
+.workspace-board-head .eyebrow,
+.workspace-board-head .page-title {
+  margin: 0;
+}
+
+.workspace-board-head .page-title {
+  font-size: clamp(1.35rem, 2vw, 2rem);
+}
+
+.workspace-contact-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 3px solid rgba(223, 192, 244, 0.22);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent 70%),
+    rgba(223, 192, 244, 0.08);
+  color: #f5ebff;
+  text-decoration: none;
+  font-family: "Silkscreen", monospace;
+  font-size: 0.74rem;
+  line-height: 1;
+  text-transform: lowercase;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    6px 6px 0 rgba(16, 14, 22, 0.18);
+  transition:
+    transform var(--motion-fast) ease,
+    border-color var(--motion-fast) ease,
+    background-color var(--motion-fast) ease,
+    color var(--motion-fast) ease,
+    box-shadow var(--motion-fast) ease;
+}
+
+.workspace-contact-link:hover,
+.workspace-contact-link:focus-visible {
+  border-color: rgba(223, 192, 244, 0.42);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), transparent 70%),
+    rgba(223, 192, 244, 0.14);
+  color: #fff7ff;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    8px 8px 0 rgba(16, 14, 22, 0.16);
+  transform: translateY(-2px);
+}
+
+.workspace-board-note {
+  margin: 0;
+  color: rgba(243, 231, 251, 0.72);
+  font-family: "Schoolbell", cursive;
+  font-size: 0.86rem;
+  line-height: 1.1;
+  text-align: left;
 }
 
 .workspace-canvas {
   position: relative;
   min-height: 680px;
   padding: 20px;
-  border: 4px solid var(--panel-border);
+  border: 0;
+  border-top: 4px solid rgba(255, 255, 255, 0.04);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 28%),
     radial-gradient(circle at top, rgba(213, 142, 245, 0.12), transparent 42%),
@@ -2404,6 +2490,16 @@ html:has(#tab-projects:target) .brand-nav-link-projects::after {
     padding: 14px;
   }
 
+  .workspace-board-head {
+    flex-wrap: wrap;
+    align-items: start;
+    padding: 16px 16px 14px;
+  }
+
+  .workspace-board-actions {
+    justify-items: start;
+  }
+
   .workspace-canvas::before,
   .workspace-canvas::after {
     display: none;
@@ -2425,6 +2521,16 @@ html:has(#tab-projects:target) .brand-nav-link-projects::after {
     inset: auto;
     padding: 22px 20px 18px;
     box-shadow: 6px 6px 0 rgba(16, 14, 22, 0.32);
+  }
+
+  .workspace-contact-link {
+    min-height: 42px;
+    padding: 0 14px;
+    font-size: 0.66rem;
+  }
+
+  .workspace-board-note {
+    text-align: left;
   }
 
   .sticky-note {
