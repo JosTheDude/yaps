@@ -63,13 +63,20 @@ a:focus-visible {
 }
 
 .page-shell {
-  min-height: 100vh;
-  padding: 72px 20px;
+  min-height: 100svh;
+  padding: clamp(24px, 4vh, 52px) 20px clamp(24px, 4vh, 40px);
 }
 
 .site-layout {
   width: min(100%, 960px);
   margin: 0 auto;
+}
+
+html:not(:has(#tab-about:target)):not(:has(#tab-projects:target)) .site-layout,
+html:has(#tab-home:target) .site-layout {
+  min-height: calc(100svh - clamp(48px, 8vh, 92px));
+  display: grid;
+  align-content: center;
 }
 
 .tab-anchor {
@@ -112,7 +119,7 @@ html:has(#tab-projects:target) .tab-track {
   justify-content: space-between;
   align-items: flex-start;
   gap: 20px;
-  margin: 0 0 22px;
+  margin: 0 0 18px;
   animation: rise-in var(--motion-slow) var(--motion-ease) both;
 }
 
@@ -1747,53 +1754,41 @@ html:has(#tab-projects:target) .brand-nav-link-projects::after {
     transform var(--motion-base) var(--motion-ease);
 }
 
-.chalk-doodle-top {
-  top: 22px;
+.chalk-doodle-cube {
+  top: 72px;
   left: 58%;
-  width: 92px;
-  height: 72px;
-  --doodle-rotate: 6deg;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 92 72' fill='none'%3E%3Cpath d='M28 10 56 4l22 16-29 7-21-17ZM28 10l1 29 20 18V27M49 27l29-7v29L49 57' stroke='%23f3e7fb' stroke-opacity='.5' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  width: 84px;
+  height: 68px;
+  --doodle-rotate: 4deg;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 84 68' fill='none'%3E%3Cpath d='m20 12 4 12 12 4-12 4-4 12-4-12-12-4 12-4 4-12ZM58 18l3 9 9 3-9 3-3 9-3-9-9-3 9-3 3-9ZM44 42l2 6 6 2-6 2-2 6-2-6-6-2 6-2 2-6Z' stroke='%23f3e7fb' stroke-opacity='.52' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   transform: translateX(-50%) rotate(var(--doodle-rotate));
 }
 
-.chalk-doodle-right {
-  top: 158px;
-  right: 168px;
-  bottom: auto;
-  width: 98px;
-  height: 76px;
-  --doodle-rotate: -4deg;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 98 76' fill='none'%3E%3Crect x='8' y='30' width='24' height='24' rx='1' stroke='%23f3e7fb' stroke-opacity='.48' stroke-width='3'/%3E%3Crect x='34' y='18' width='24' height='24' rx='1' stroke='%23f3e7fb' stroke-opacity='.56' stroke-width='3'/%3E%3Crect x='60' y='30' width='24' height='24' rx='1' stroke='%23f3e7fb' stroke-opacity='.44' stroke-width='3'/%3E%3Cpath d='M20 30V17h50' stroke='%23f3e7fb' stroke-opacity='.36' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
-  transform: rotate(var(--doodle-rotate));
+.chalk-doodle-stars {
+  top: 154px;
+  left: 272px;
+  width: 54px;
+  height: 50px;
+  --doodle-rotate: -6deg;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 54 50' fill='none'%3E%3Cpath d='M15 17 20 8l7 7M39 17l-5-9-7 7' stroke='%23f3e7fb' stroke-opacity='.5' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 19c-4 3-6 7-6 11 0 9 8 15 17 15s17-6 17-15c0-4-2-8-6-11' stroke='%23f3e7fb' stroke-opacity='.5' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M22 28h.01M32 28h.01' stroke='%23f3e7fb' stroke-opacity='.5' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M24 35c2 2 4 3 6 0' stroke='%23f3e7fb' stroke-opacity='.46' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M18 32l-8-2M18 35l-9 2M36 32l8-2M36 35l9 2' stroke='%23f3e7fb' stroke-opacity='.38' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 
-.chalk-doodle-bottom {
-  left: 236px;
-  bottom: 108px;
-  width: 74px;
-  height: 74px;
-  --doodle-rotate: -10deg;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 74 74' fill='none'%3E%3Cpath d='M37 64s-23-14-23-31c0-8 6-13 13-13 5 0 9 3 10 7 1-4 5-7 10-7 7 0 13 5 13 13 0 17-23 31-23 31Z' stroke='%23f3e7fb' stroke-opacity='.5' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E");
-}
-
-.chalk-doodle-left {
-  left: 126px;
-  top: 112px;
-  width: 82px;
+.chalk-doodle-sparkle {
+  top: 314px;
+  right: 216px;
+  width: 70px;
   height: 70px;
-  --doodle-rotate: -8deg;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 82 70' fill='none'%3E%3Crect x='8' y='24' width='22' height='22' rx='1' stroke='%23f3e7fb' stroke-opacity='.36' stroke-width='3'/%3E%3Crect x='30' y='14' width='22' height='22' rx='1' stroke='%23f3e7fb' stroke-opacity='.52' stroke-width='3'/%3E%3Crect x='52' y='24' width='22' height='22' rx='1' stroke='%23f3e7fb' stroke-opacity='.42' stroke-width='3'/%3E%3C/svg%3E");
+  --doodle-rotate: 8deg;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 84 84' fill='none'%3E%3Cpath d='M42 12v18M42 54v18M12 42h18M54 42h18M22 22l12 12M50 50l12 12M62 22 50 34M34 50 22 62' stroke='%23f3e7fb' stroke-opacity='.4' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='42' cy='42' r='8' stroke='%23f3e7fb' stroke-opacity='.3' stroke-width='3'/%3E%3C/svg%3E");
 }
 
-.chalk-doodle-corner {
-  top: 236px;
-  right: 234px;
-  bottom: auto;
-  width: 96px;
-  height: 72px;
-  --doodle-rotate: 9deg;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 72' fill='none'%3E%3Cpath d='M18 30 43 24l20 14-24 6-21-14ZM18 30v19l21 14V44M39 44l24-6v19L39 63' stroke='%23f3e7fb' stroke-opacity='.44' stroke-width='3' stroke-linejoin='round'/%3E%3Cpath d='M53 16c5 0 8 3 8 8' stroke='%23f3e7fb' stroke-opacity='.3' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+.chalk-doodle-heart {
+  left: 292px;
+  bottom: 92px;
+  width: 66px;
+  height: 66px;
+  --doodle-rotate: -6deg;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 74 74' fill='none'%3E%3Cpath d='M37 64s-23-14-23-31c0-8 6-13 13-13 5 0 9 3 10 7 1-4 5-7 10-7 7 0 13 5 13 13 0 17-23 31-23 31Z' stroke='%23f3e7fb' stroke-opacity='.5' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
 .page-shell.is-tab-transitioning .chalk-doodle {
@@ -1801,51 +1796,50 @@ html:has(#tab-projects:target) .brand-nav-link-projects::after {
   transform: rotate(var(--doodle-rotate, 0deg)) translateY(-4px);
 }
 
-.page-shell.is-tab-transitioning .chalk-doodle-top {
+.page-shell.is-tab-transitioning .chalk-doodle-cube {
   transform: translateX(-50%) rotate(var(--doodle-rotate)) translateY(-4px);
-}
-
-.page-shell.is-tab-transitioning .chalk-doodle-right {
-  transform: rotate(var(--doodle-rotate)) translateY(-4px);
 }
 
 .chalk-hidden-note {
   position: absolute;
   z-index: 1;
-  color: rgba(243, 231, 251, 0.52);
+  color: rgba(243, 231, 251, 0.38);
   font-family: "Schoolbell", cursive;
-  font-size: 0.96rem;
+  font-size: 0.78rem;
   line-height: 1;
   letter-spacing: 0.03em;
   pointer-events: none;
   user-select: none;
-  text-shadow: 0 0 7px rgba(243, 231, 251, 0.08);
+  text-shadow: 0 0 6px rgba(243, 231, 251, 0.07);
   transform: rotate(var(--hidden-note-rotate, 0deg));
-  opacity: 0.9;
+  opacity: 0.78;
+  max-width: 122px;
 }
 
 .chalk-hidden-note-role {
-  top: 168px;
-  left: 86px;
+  top: 146px;
+  left: 94px;
   --hidden-note-rotate: -6deg;
 }
 
 .chalk-hidden-note-vibe {
-  top: 166px;
+  top: 150px;
   right: 88px;
   --hidden-note-rotate: 5deg;
+  text-align: center;
 }
 
 .chalk-hidden-note-focus {
-  bottom: 126px;
-  left: 106px;
+  bottom: 114px;
+  left: 122px;
   --hidden-note-rotate: -7deg;
 }
 
 .chalk-hidden-note-care {
-  right: 96px;
-  bottom: 122px;
+  right: 116px;
+  bottom: 112px;
   --hidden-note-rotate: 6deg;
+  text-align: center;
 }
 
 .page-shell.is-tab-transitioning .chalk-hidden-note {
@@ -2349,7 +2343,7 @@ html:has(#tab-projects:target) .brand-nav-link-projects::after {
 
 @media (max-width: 720px) {
   .page-shell {
-    padding: 28px 14px 48px;
+    padding: 20px 14px 32px;
   }
 
   .brand-nav {
