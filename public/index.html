@@ -34,8 +34,9 @@
   <meta name="twitter:image:alt"
     content="jos.gg social preview card with a dark sleek banner and the line developer plus devops engineer.">
 
+  <link rel="icon" type="image/svg+xml" href="./favicon-cookie.svg">
   <link
-    href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Silkscreen:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Schoolbell&family=Silkscreen:wght@400;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
 </head>
@@ -95,9 +96,10 @@
                 <section class="panel-card intro-card">
                   <div class="avatar-shell" aria-hidden="true">
                     <div class="avatar-ring">
-                      <div class="avatar-core">J</div>
+                      <div class="avatar-core">
+                        <img src="./images/avatar.png" alt="avatar" width="100" height="100">
+                      </div>
                     </div>
-                    <span class="avatar-badge">cat</span>
                   </div>
 
                   <div class="intro-copy">
@@ -125,8 +127,7 @@
                       and unique to play. I also love cookies & have a cat.
                     </p>
                     <p>
-                      If you'd like to chat about a project or just want to say hi, feel free to reach out! (cat
-                      photos are also loved!)
+                      If you'd like to chat about a project or just want to say hi, feel free to reach out!
                     </p>
                   </div>
                 </section>
@@ -164,69 +165,65 @@
                 <section class="panel-card sidebar-card testimonial-card" data-testimonial-carousel
                   aria-label="Testimonials">
                   <div class="testimonial-card-head">
-                    <div>
+                    <div class="testimonial-heading">
                       <h2 class="section-title">testimonials</h2>
-                      <p class="testimonial-lede">direct from clients & collaborators.</p>
+                      <p class="testimonial-lede">reviews from people i've worked with!</p>
                     </div>
-                    <p class="testimonial-count" data-testimonial-count>01/03</p>
+                    <div class="testimonial-status">
+                      <p class="testimonial-count" data-testimonial-count>01/02</p>
+                      <div class="testimonial-arrow-stack" aria-label="Testimonial controls">
+                        <button class="testimonial-arrow" type="button" data-testimonial-prev
+                          aria-label="Show previous testimonial">
+                          &lt;
+                        </button>
+                        <button class="testimonial-arrow" type="button" data-testimonial-next
+                          aria-label="Show next testimonial">
+                          &gt;
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                  <div class="testimonial-screen">
+                  <div class="testimonial-stage">
                     <div class="testimonial-slides">
                       <article class="testimonial-slide is-active" data-testimonial-slide>
                         <p class="testimonial-quote">
-                          “meow”
+                          “Jos is an essential part of our team and does an excellent job handling all of our
+                          backend needs. He is highly responsive, reliable, and consistently gets things done
+                          efficiently, allowing us to stay focused on our projects and clients. 10/10 service”
                         </p>
-                        <div class="testimonial-source">
-                          <strong>cat</strong>
-                          <span>meow</span>
-                        </div>
-                        <div class="testimonial-tags" aria-label="Testimonial topics">
-                          <span class="testimonial-tag">plugin architecture</span>
-                          <span class="testimonial-tag">release flow</span>
+                        <div class="testimonial-meta">
+                          <div class="testimonial-source">
+                            <span>Ash - Founder</span>
+                            <strong>Lumine &amp; Mythiccraft</strong>
+                          </div>
+                          <div class="testimonial-tags" aria-label="Testimonial topics">
+                            <span class="testimonial-tag">backend</span>
+                            <span class="testimonial-tag">reliability</span>
+                          </div>
                         </div>
                       </article>
                       <article class="testimonial-slide" data-testimonial-slide aria-hidden="true">
                         <p class="testimonial-quote">
-                          “meow meow”
+                          “Jos's (...) responsiveness is unmatched, issues get
+                          addressed quickly and thoroughly, keeping everything running smoothly with minimal
+                          downtime. Beyond that, his expertise with integrations and GitLab workflows has made a
+                          huge difference in how efficiently we manage and deploy updates to our infra and websites
+                          at Mythic. It’s clear he takes pride in his work, and having him on the team gives us
+                          total confidence in our infrastructure.”
                         </p>
-                        <div class="testimonial-source">
-                          <strong>ops lead</strong>
-                        </div>
-                        <div class="testimonial-tags" aria-label="Testimonial topics">
-                          <span class="testimonial-tag">staff ux</span>
-                          <span class="testimonial-tag">maintenance</span>
-                        </div>
-                      </article>
-                      <article class="testimonial-slide" data-testimonial-slide aria-hidden="true">
-                        <p class="testimonial-quote">
-                          “supa cool”
-                        </p>
-                        <div class="testimonial-source">
-                          <strong>professional meower</strong>
-                        </div>
-                        <div class="testimonial-tags" aria-label="Testimonial topics">
-                          <span class="testimonial-tag">full-stack delivery</span>
+                        <div class="testimonial-meta">
+                          <div class="testimonial-source">
+                            <span>Joshua - Chief Executive Officer</span>
+                            <strong>MCModels &amp; Isles</strong>
+                          </div>
+                          <div class="testimonial-tags" aria-label="Testimonial topics">
+                            <span class="testimonial-tag">system admin</span>
+                            <span class="testimonial-tag">gitlab</span>
+                            <span class="testimonial-tag">infra</span>
+                          </div>
                         </div>
                       </article>
                     </div>
-                  </div>
-                  <div class="testimonial-controls">
-                    <button class="testimonial-control" type="button" data-testimonial-prev
-                      aria-label="Show previous testimonial">
-                      prev
-                    </button>
-                    <div class="testimonial-dots" aria-label="Select testimonial">
-                      <button class="testimonial-dot is-active" type="button" data-testimonial-dot
-                        data-testimonial-index="0" aria-label="Show testimonial 1" aria-pressed="true"></button>
-                      <button class="testimonial-dot" type="button" data-testimonial-dot data-testimonial-index="1"
-                        aria-label="Show testimonial 2" aria-pressed="false"></button>
-                      <button class="testimonial-dot" type="button" data-testimonial-dot data-testimonial-index="2"
-                        aria-label="Show testimonial 3" aria-pressed="false"></button>
-                    </div>
-                    <button class="testimonial-control" type="button" data-testimonial-next
-                      aria-label="Show next testimonial">
-                      next
-                    </button>
                   </div>
                 </section>
               </aside>
@@ -240,9 +237,9 @@
                   <p class="eyebrow">about me</p>
                   <h1 class="page-title">my about-board</h1>
                   <p class="page-summary">
-                    hi! i'm jos! i love to build things. this space is place for
-                    me to share who i am and how i work. i have a similar
-                    whiteboard & stickies all around my room.
+                    hello! this page is a quick summary of who i am, what i can do,
+                    and some of the skills i specialize in. i have a similar
+                    board with stickynotes all around my room!
                   </p>
                 </section>
 
@@ -273,6 +270,18 @@
                         <span>backend</span>
                       </div>
                     </article>
+
+                    <span class="chalk-doodle chalk-doodle-top" aria-hidden="true"></span>
+                    <span class="chalk-doodle chalk-doodle-right" aria-hidden="true"></span>
+                    <span class="chalk-doodle chalk-doodle-bottom" aria-hidden="true"></span>
+                    <span class="chalk-doodle chalk-doodle-left" aria-hidden="true"></span>
+                    <span class="chalk-doodle chalk-doodle-corner" aria-hidden="true"></span>
+
+                    <span class="chalk-hidden-note chalk-hidden-note-role" aria-hidden="true">you got this</span>
+                    <span class="chalk-hidden-note chalk-hidden-note-vibe" aria-hidden="true">keep building cool
+                      things</span>
+                    <span class="chalk-hidden-note chalk-hidden-note-focus" aria-hidden="true">whiskey approved</span>
+                    <span class="chalk-hidden-note chalk-hidden-note-care" aria-hidden="true">made with care</span>
 
                     <article class="sticky-note sticky-note-gold sticky-note-role" data-sticky-note
                       data-note-rotate="-4">
@@ -322,7 +331,7 @@
 
                 <aside class="client-carousel-card" data-client-carousel aria-label="Clients and collaborators">
                   <div class="client-carousel-head">
-                    <p class="client-carousel-label">people i've worked with</p>
+                    <p class="client-carousel-label">some of my clients</p>
                   </div>
                   <div class="client-carousel-window">
                     <div class="client-carousel-track">
@@ -365,23 +374,6 @@
                   </div>
                   <div class="client-carousel-readout">
                     <strong class="client-carousel-name" data-client-carousel-name>tubbo</strong>
-                    <p class="client-carousel-count" data-client-carousel-count>01/07</p>
-                  </div>
-                  <div class="client-carousel-dots" aria-label="Select client">
-                    <button class="client-carousel-dot is-active" type="button" data-client-carousel-dot
-                      data-client-carousel-index="0" aria-label="Show tubbo" aria-pressed="true"></button>
-                    <button class="client-carousel-dot" type="button" data-client-carousel-dot
-                      data-client-carousel-index="1" aria-label="Show speedsilver" aria-pressed="false"></button>
-                    <button class="client-carousel-dot" type="button" data-client-carousel-dot
-                      data-client-carousel-index="2" aria-label="Show hoplite" aria-pressed="false"></button>
-                    <button class="client-carousel-dot" type="button" data-client-carousel-dot
-                      data-client-carousel-index="3" aria-label="Show valorant" aria-pressed="false"></button>
-                    <button class="client-carousel-dot" type="button" data-client-carousel-dot
-                      data-client-carousel-index="4" aria-label="Show minutetech" aria-pressed="false"></button>
-                    <button class="client-carousel-dot" type="button" data-client-carousel-dot
-                      data-client-carousel-index="5" aria-label="Show ajthebold" aria-pressed="false"></button>
-                    <button class="client-carousel-dot" type="button" data-client-carousel-dot
-                      data-client-carousel-index="6" aria-label="Show zedarmc" aria-pressed="false"></button>
                   </div>
                 </aside>
               </section>
@@ -997,20 +989,15 @@
   </div>
   <script>
     (() => {
-      const pageShell = document.querySelector(".page-shell");
       const tabStage = document.querySelector(".tab-stage");
       const tabPanels = Array.from(document.querySelectorAll(".tab-panel"));
-      const tabLinks = Array.from(document.querySelectorAll('a[href^="#tab-"]'));
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-      let transitionTimer = 0;
-      let heightFrame = 0;
 
-      if (!pageShell || !tabStage || !tabPanels.length || !tabLinks.length) {
+      if (!tabStage || !tabPanels.length) {
         return;
       }
 
-      const getActiveTabIndex = () => {
-        switch (window.location.hash) {
+      const getTabIndex = (hash = window.location.hash) => {
+        switch (hash) {
           case "#tab-about":
             return 1;
           case "#tab-projects":
@@ -1021,7 +1008,7 @@
       };
 
       const syncTabStageHeight = () => {
-        const activePanel = tabPanels[getActiveTabIndex()];
+        const activePanel = tabPanels[getTabIndex()];
 
         if (!activePanel) {
           return;
@@ -1031,42 +1018,15 @@
       };
 
       const queueTabStageHeightSync = () => {
-        window.cancelAnimationFrame(heightFrame);
-        heightFrame = window.requestAnimationFrame(syncTabStageHeight);
+        window.requestAnimationFrame(syncTabStageHeight);
       };
 
-      const startTabTransition = () => {
-        window.clearTimeout(transitionTimer);
-        pageShell.classList.add("is-tab-transitioning");
-        queueTabStageHeightSync();
-        transitionTimer = window.setTimeout(() => {
-          pageShell.classList.remove("is-tab-transitioning");
-        }, reduceMotion.matches ? 40 : 330);
-      };
-
-      tabLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          const targetHash = link.getAttribute("href");
-
-          if (!targetHash || targetHash === window.location.hash) {
-            return;
-          }
-
-          startTabTransition();
-        });
-      });
-
-      window.addEventListener("hashchange", () => {
-        startTabTransition();
-        queueTabStageHeightSync();
-      });
+      window.addEventListener("hashchange", queueTabStageHeightSync);
       window.addEventListener("resize", queueTabStageHeightSync);
       window.addEventListener("load", queueTabStageHeightSync);
 
       if (typeof ResizeObserver === "function") {
-        const resizeObserver = new ResizeObserver(() => {
-          queueTabStageHeightSync();
-        });
+        const resizeObserver = new ResizeObserver(queueTabStageHeightSync);
 
         tabPanels.forEach((panel) => {
           resizeObserver.observe(panel);
@@ -1311,16 +1271,19 @@
       }
 
       const items = Array.from(carousel.querySelectorAll("[data-client-carousel-item]"));
-      const dots = Array.from(carousel.querySelectorAll("[data-client-carousel-dot]"));
-      const countNode = carousel.querySelector("[data-client-carousel-count]");
       const nameNode = carousel.querySelector("[data-client-carousel-name]");
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
       const total = items.length;
-      const formatCount = (value) => String(value).padStart(2, "0");
       let activeIndex = 0;
       let rotationTimer = 0;
+      let queuedFrame = 0;
 
       const stopRotation = () => {
+        if (queuedFrame) {
+          window.clearTimeout(queuedFrame);
+          queuedFrame = 0;
+        }
+
         if (!rotationTimer) {
           return;
         }
@@ -1336,24 +1299,12 @@
           const isActive = index === activeIndex;
           const isPrev = index === (activeIndex - 1 + total) % total;
           const isNext = index === (activeIndex + 1) % total;
-          const isVisible = isActive || isPrev || isNext;
 
           item.classList.toggle("is-active", isActive);
           item.classList.toggle("is-prev", isPrev);
           item.classList.toggle("is-next", isNext);
-          item.setAttribute("aria-hidden", isVisible ? "false" : "true");
+          item.setAttribute("aria-hidden", isActive ? "false" : "true");
         });
-
-        dots.forEach((dot, index) => {
-          const isActive = index === activeIndex;
-
-          dot.classList.toggle("is-active", isActive);
-          dot.setAttribute("aria-pressed", isActive ? "true" : "false");
-        });
-
-        if (countNode) {
-          countNode.textContent = `${formatCount(activeIndex + 1)}/${formatCount(total)}`;
-        }
 
         if (nameNode) {
           nameNode.textContent = items[activeIndex]?.dataset.clientName || "";
@@ -1367,37 +1318,15 @@
           return;
         }
 
+        queuedFrame = window.setTimeout(() => {
+          updateClient(activeIndex + 1);
+          queuedFrame = 0;
+        }, 320);
+
         rotationTimer = window.setInterval(() => {
           updateClient(activeIndex + 1);
-        }, 2600);
+        }, 1650);
       };
-
-      dots.forEach((dot) => {
-        dot.addEventListener("click", () => {
-          updateClient(Number(dot.dataset.clientCarouselIndex || "0"));
-          startRotation();
-        });
-      });
-
-      items.forEach((item, index) => {
-        item.addEventListener("click", () => {
-          if (index === activeIndex) {
-            return;
-          }
-
-          updateClient(index);
-          startRotation();
-        });
-      });
-
-      carousel.addEventListener("pointerenter", stopRotation);
-      carousel.addEventListener("pointerleave", startRotation);
-      carousel.addEventListener("focusin", stopRotation);
-      carousel.addEventListener("focusout", (event) => {
-        if (!carousel.contains(event.relatedTarget)) {
-          startRotation();
-        }
-      });
 
       const handleMotionChange = () => {
         startRotation();
@@ -1426,11 +1355,18 @@
       const countNode = carousel.querySelector("[data-testimonial-count]");
       const prevButton = carousel.querySelector("[data-testimonial-prev]");
       const nextButton = carousel.querySelector("[data-testimonial-next]");
+      const slidesNode = carousel.querySelector(".testimonial-slides");
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
       const total = slides.length;
       const formatCount = (value) => String(value).padStart(2, "0");
       let activeIndex = 0;
       let rotationTimer = 0;
+
+      if (!total) {
+        return;
+      }
+
+      carousel.classList.toggle("is-static", total < 2);
 
       const stopRotation = () => {
         if (!rotationTimer) {
@@ -1441,19 +1377,33 @@
         rotationTimer = 0;
       };
 
+      const syncHeight = () => {
+        if (!slidesNode) {
+          return;
+        }
+
+        const activeSlide = slides[activeIndex];
+
+        if (!activeSlide) {
+          slidesNode.style.height = "";
+          return;
+        }
+
+        slidesNode.style.height = `${activeSlide.scrollHeight}px`;
+      };
+
       const updateSlide = (nextIndex) => {
         activeIndex = (nextIndex + total) % total;
 
         slides.forEach((slide, index) => {
           const isActive = index === activeIndex;
-          const isPrev = index === (activeIndex - 1 + total) % total;
-          const isNext = index === (activeIndex + 1) % total;
-          const isVisible = isActive || isPrev || isNext;
+          const isPrev = total > 1 && index === (activeIndex - 1 + total) % total;
+          const isNext = total > 1 && index === (activeIndex + 1) % total;
 
           slide.classList.toggle("is-active", isActive);
           slide.classList.toggle("is-prev", isPrev);
           slide.classList.toggle("is-next", isNext);
-          slide.setAttribute("aria-hidden", isVisible ? "false" : "true");
+          slide.setAttribute("aria-hidden", isActive ? "false" : "true");
         });
 
         dots.forEach((dot, index) => {
@@ -1466,6 +1416,8 @@
         if (countNode) {
           countNode.textContent = `${formatCount(activeIndex + 1)}/${formatCount(total)}`;
         }
+
+        syncHeight();
       };
 
       const startRotation = () => {
@@ -1510,6 +1462,10 @@
         startRotation();
       };
 
+      window.addEventListener("resize", () => {
+        window.requestAnimationFrame(syncHeight);
+      });
+
       if (typeof reduceMotion.addEventListener === "function") {
         reduceMotion.addEventListener("change", handleMotionChange);
       } else if (typeof reduceMotion.addListener === "function") {
@@ -1517,6 +1473,7 @@
       }
 
       updateSlide(0);
+      window.requestAnimationFrame(syncHeight);
       startRotation();
     })();
   </script>
