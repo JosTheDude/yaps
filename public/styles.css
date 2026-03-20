@@ -117,17 +117,33 @@ html:has(#tab-contact:target) .tab-track {
 }
 
 .masthead-card {
-  display: flex;
+  display: grid;
+  grid-template-areas:
+    "brand badges"
+    "nav   contact";
+  grid-template-columns: auto auto;
   justify-content: space-between;
-  align-items: flex-end;
-  gap: 20px;
+  align-items: end;
+  gap: 0;
   margin: 0 0 18px;
   animation: rise-in var(--motion-slow) var(--motion-ease) both;
 }
 
-.masthead-main {
-  display: inline-grid;
-  gap: 0;
+.brand-block {
+  grid-area: brand;
+}
+
+.brand-nav {
+  grid-area: nav;
+}
+
+.masthead-badge-stack {
+  grid-area: badges;
+  align-self: end;
+}
+
+.masthead-contact-btn {
+  grid-area: contact;
 }
 
 .brand-block,
@@ -251,11 +267,7 @@ html:has(#tab-projects:target) .brand-nav-link-projects::after {
   text-shadow: 0 0 18px rgba(213, 142, 245, 0.26);
 }
 
-.masthead-links {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
+.masthead-badge-stack {
   animation: rise-in calc(var(--motion-slow) + 180ms) var(--motion-ease) both;
 }
 
@@ -265,6 +277,7 @@ html:has(#tab-projects:target) .brand-nav-link-projects::after {
   align-items: center;
   justify-content: center;
   width: 100%;
+  animation: rise-in calc(var(--motion-slow) + 180ms) var(--motion-ease) both;
   padding: 24px 22px 22px;
   border: 6px solid var(--panel-border);
   background:
@@ -318,6 +331,19 @@ html:has(#tab-contact:target) .masthead-contact-btn::after {
   transform: scaleX(1);
 }
 
+html:has(#tab-contact:target) .brand-nav-link-contact {
+  background: #4b4959;
+  font-weight: 700;
+}
+
+html:has(#tab-contact:target) .brand-nav-link-contact::after {
+  transform: scaleX(1);
+}
+
+.brand-nav-link-contact {
+  display: none;
+}
+
 .masthead-badge-stack {
   display: flex;
   flex-direction: row;
@@ -362,24 +388,24 @@ html:has(#tab-contact:target) .masthead-contact-btn::after {
   gap: 18px;
 }
 
-.main-stack > *,
-.sidebar-stack > * {
+.main-stack>*,
+.sidebar-stack>* {
   animation: rise-in var(--motion-slow) var(--motion-ease) both;
 }
 
-.main-stack > :nth-child(1) {
+.main-stack> :nth-child(1) {
   animation-delay: 120ms;
 }
 
-.main-stack > :nth-child(2) {
+.main-stack> :nth-child(2) {
   animation-delay: 210ms;
 }
 
-.main-stack > :nth-child(3) {
+.main-stack> :nth-child(3) {
   animation-delay: 300ms;
 }
 
-.sidebar-stack > :nth-child(1) {
+.sidebar-stack> :nth-child(1) {
   animation-delay: 240ms;
 }
 
@@ -1065,15 +1091,15 @@ html:has(#tab-contact:target) .masthead-contact-btn::after {
   gap: 18px;
 }
 
-.projects-layout > * {
+.projects-layout>* {
   animation: rise-in var(--motion-slow) var(--motion-ease) both;
 }
 
-.projects-layout > :nth-child(1) {
+.projects-layout> :nth-child(1) {
   animation-delay: 120ms;
 }
 
-.projects-layout > :nth-child(2) {
+.projects-layout> :nth-child(2) {
   animation-delay: 210ms;
 }
 
@@ -1107,6 +1133,7 @@ html:has(#tab-contact:target) .masthead-contact-btn::after {
   font-family: "Silkscreen", monospace;
   text-transform: lowercase;
   color: var(--accent);
+  margin-bottom: 5px;
   font-size: 0.62rem;
 }
 
@@ -1167,8 +1194,13 @@ html:has(#tab-contact:target) .masthead-contact-btn::after {
 }
 
 @keyframes client-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1982,8 +2014,7 @@ html:has(#tab-contact:target) .masthead-contact-btn::after {
   transform: rotate(var(--note-rotate, 0deg));
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.26);
   filter:
-    drop-shadow(10px 10px 0 rgba(16, 14, 22, 0.22))
-    drop-shadow(0 12px 18px rgba(16, 14, 22, 0.14));
+    drop-shadow(10px 10px 0 rgba(16, 14, 22, 0.22)) drop-shadow(0 12px 18px rgba(16, 14, 22, 0.14));
   transition:
     filter var(--motion-fast) ease,
     transform var(--motion-fast) ease,
@@ -2016,8 +2047,7 @@ html:has(#tab-contact:target) .masthead-contact-btn::after {
 .sticky-note.is-dragging {
   cursor: grabbing;
   filter:
-    drop-shadow(16px 16px 0 rgba(16, 14, 22, 0.2))
-    drop-shadow(0 18px 28px rgba(16, 14, 22, 0.16));
+    drop-shadow(16px 16px 0 rgba(16, 14, 22, 0.2)) drop-shadow(0 18px 28px rgba(16, 14, 22, 0.16));
   transform: rotate(var(--note-rotate, 0deg)) scale(1.02);
 }
 
@@ -2207,11 +2237,9 @@ html:has(#tab-contact:target) .masthead-contact-btn::after {
   position: absolute;
   inset: 0;
   background:
-    repeating-linear-gradient(
-      180deg,
+    repeating-linear-gradient(180deg,
       rgba(255, 255, 255, 0.1) 0 1px,
-      rgba(255, 255, 255, 0) 1px 3px
-    );
+      rgba(255, 255, 255, 0) 1px 3px);
   opacity: 0.35;
   pointer-events: none;
 }
@@ -2372,6 +2400,7 @@ html:has(#tab-contact:target) .masthead-contact-btn::after {
 }
 
 @keyframes badge-float {
+
   0%,
   100% {
     transform: translateY(0);
@@ -2383,6 +2412,7 @@ html:has(#tab-contact:target) .masthead-contact-btn::after {
 }
 
 @keyframes pulse-glow {
+
   0%,
   100% {
     box-shadow: 0 0 0 rgba(213, 142, 245, 0);
@@ -2401,13 +2431,9 @@ html:has(#tab-contact:target) .masthead-contact-btn::after {
 
   100% {
     opacity: 0;
-    transform: translate3d(
-        calc(var(--confetti-x, 0) + var(--confetti-dx, 0px)),
+    transform: translate3d(calc(var(--confetti-x, 0) + var(--confetti-dx, 0px)),
         calc(var(--confetti-y, 0) + var(--confetti-dy, 0px)),
-        0
-      )
-      scale(1)
-      rotate(var(--confetti-rot, 90deg));
+        0) scale(1) rotate(var(--confetti-rot, 90deg));
   }
 }
 
@@ -2416,18 +2442,23 @@ html:has(#tab-contact:target) .masthead-contact-btn::after {
     width: min(100%, 820px);
   }
 
-  .masthead-card,
   .footer-banner {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .masthead-links {
-    padding-top: 0;
+  .masthead-card {
+    grid-template-columns: auto 1fr;
+    justify-content: start;
   }
 
   .masthead-badge-stack {
-    justify-items: start;
+    justify-self: end;
+    justify-content: flex-end;
+  }
+
+  .masthead-contact-btn {
+    justify-self: end;
   }
 
   .masthead-badge-stack .badge-tile {
@@ -2460,12 +2491,30 @@ html:has(#tab-contact:target) .masthead-contact-btn::after {
     padding: 20px 14px 32px;
   }
 
+  .masthead-card {
+    grid-template-areas:
+      "brand badges"
+      "nav   nav";
+    grid-template-columns: auto 1fr;
+    justify-content: start;
+  }
+
   .masthead-badge-stack {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
+    justify-self: start;
+    align-self: center;
     gap: 6px;
+  }
+
+  .masthead-contact-btn {
+    display: none;
+  }
+
+  .brand-nav-link-contact {
+    display: inline-flex;
   }
 
   .masthead-badge-stack .badge-tile {
@@ -2474,6 +2523,7 @@ html:has(#tab-contact:target) .masthead-contact-btn::after {
 
   .brand-nav {
     flex-wrap: wrap;
+    margin-top: -6px;
   }
 
   .footer-banner {
@@ -2949,6 +2999,7 @@ html:has(#tab-contact:target) .masthead-contact-btn::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
