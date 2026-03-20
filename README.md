@@ -18,7 +18,7 @@ bun run dev
 ### Deploy
 
 ```bash
-bun run wrangler secret put DISCORD_WEBHOO
+bun run wrangler secret put DISCORD_WEBHOOK
 bun run cf:whoami
 bun run deploy
 ```
