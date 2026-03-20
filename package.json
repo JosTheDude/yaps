@@ -5,7 +5,8 @@
   "scripts": {
     "cf:whoami": "wrangler -c workers.toml whoami",
     "dev": "wrangler -c workers.toml dev",
-    "deploy": "wrangler -c workers.toml deploy"
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   },
   "devDependencies": {
     "wrangler": "^4.75.0"
