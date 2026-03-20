@@ -20,6 +20,12 @@
       return;
     }
 
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      status.textContent = "please enter a valid email address.";
+      status.dataset.state = "error";
+      return;
+    }
+
     submitBtn.disabled = true;
     submitBtn.textContent = "sending...";
     status.textContent = "";
