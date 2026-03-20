@@ -143,12 +143,13 @@ html:has(#tab-contact:target) .tab-track {
   margin-bottom: 10px;
 }
 
-.masthead-contact-btn {
+.masthead-contact-shell {
   grid-area: contact;
 }
 
 .brand-block,
 .brand-nav,
+.masthead-contact-shell,
 .panel-card {
   position: relative;
   border: 6px solid var(--panel-border);
@@ -186,6 +187,15 @@ html:has(#tab-contact:target) .tab-track {
   margin-top: -6px;
   padding: 10px;
   animation: rise-in calc(var(--motion-slow) + 120ms) var(--motion-ease) both;
+}
+
+.masthead-contact-shell {
+  display: flex;
+  width: 184px;
+  justify-self: end;
+  margin-top: -6px;
+  padding: 10px;
+  animation: rise-in calc(var(--motion-slow) + 180ms) var(--motion-ease) both;
 }
 
 .brand-nav-link {
@@ -258,7 +268,9 @@ html:has(#tab-projects:target) .brand-nav-link-projects::after {
 .brand-block:hover,
 .brand-block:focus-within,
 .brand-nav:hover,
-.brand-nav:focus-within {
+.brand-nav:focus-within,
+.masthead-contact-shell:hover,
+.masthead-contact-shell:focus-within {
   box-shadow: 10px 10px 0 var(--shadow);
 }
 
@@ -273,54 +285,10 @@ html:has(#tab-projects:target) .brand-nav-link-projects::after {
 }
 
 .masthead-contact-btn {
-  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  animation: rise-in calc(var(--motion-slow) + 180ms) var(--motion-ease) both;
-  padding: 24px 22px 22px;
-  border: 6px solid var(--panel-border);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent 70%),
-    rgba(223, 192, 244, 0.08);
-  color: #f5ebff;
-  text-decoration: none;
-  font-family: "Pixelify Sans", sans-serif;
-  font-size: clamp(1.25rem, 2vw, 1.9rem);
-  line-height: 1;
-  text-transform: lowercase;
-  box-shadow: 10px 10px 0 var(--shadow);
-  transition:
-    transform var(--motion-base) var(--motion-ease),
-    border-color var(--motion-fast) ease,
-    background var(--motion-fast) ease,
-    color var(--motion-fast) ease,
-    box-shadow var(--motion-base) var(--motion-ease);
-}
-
-.masthead-contact-btn::after {
-  content: "";
-  position: absolute;
-  left: 16px;
-  right: 16px;
-  bottom: 8px;
-  height: 3px;
-  background: var(--accent);
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform var(--motion-base) var(--motion-ease);
-}
-
-.masthead-contact-btn:hover,
-.masthead-contact-btn:focus-visible {
-  color: var(--accent);
-  transform: translateY(-2px);
-}
-
-.masthead-contact-btn:hover::after,
-.masthead-contact-btn:focus-visible::after {
-  transform: scaleX(1);
 }
 
 html:has(#tab-contact:target) .masthead-contact-btn {
@@ -2458,7 +2426,7 @@ html:has(#tab-contact:target) .brand-nav-link-contact::after {
     justify-content: flex-end;
   }
 
-  .masthead-contact-btn {
+  .masthead-contact-shell {
     justify-self: end;
   }
 
@@ -2512,7 +2480,7 @@ html:has(#tab-contact:target) .brand-nav-link-contact::after {
     margin-bottom: 5px;
   }
 
-  .masthead-contact-btn {
+  .masthead-contact-shell {
     display: none;
   }
 

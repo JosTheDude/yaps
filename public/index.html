@@ -80,7 +80,9 @@
           <a class="brand-nav-link brand-nav-link-projects" href="#tab-projects">projects</a>
           <a class="brand-nav-link brand-nav-link-contact" href="#tab-contact">contact</a>
         </nav>
-        <a class="masthead-contact-btn" href="#tab-contact">contact</a>
+        <div class="masthead-contact-shell">
+          <a class="brand-nav-link masthead-contact-btn" href="#tab-contact">contact</a>
+        </div>
       </header>
 
       <div class="tab-stage">
@@ -362,8 +364,8 @@
                           decoding="async">
                       </article>
                       <article class="client-carousel-item">
-                        <img class="client-profile-image client-profile-image-brand" src="./client-images/valorant.png"
-                          alt="VALORANT" loading="lazy" decoding="async">
+                        <img class="client-profile-image" src="./client-images/valcord.jpg"
+                          alt="VALORANT Official Discord" loading="lazy" decoding="async">
                       </article>
                       <article class="client-carousel-item">
                         <img class="client-profile-image" src="./client-images/ajthebold.jpg" alt="AJTheBold"
@@ -395,8 +397,8 @@
                           decoding="async">
                       </article>
                       <article class="client-carousel-item" aria-hidden="true">
-                        <img class="client-profile-image client-profile-image-brand" src="./client-images/valorant.png"
-                          alt="" loading="lazy" decoding="async">
+                        <img class="client-profile-image" src="./client-images/valcord.jpg" alt="" loading="lazy"
+                          decoding="async">
                       </article>
                       <article class="client-carousel-item" aria-hidden="true">
                         <img class="client-profile-image" src="./client-images/ajthebold.jpg" alt="" loading="lazy"
@@ -426,8 +428,8 @@
               <section class="panel-card active-projects-card" data-project-carousel aria-label="Actively working on">
                 <div class="projects-board-head">
                   <div>
-                    <h2 class="section-title">actively working on</h2>
-                    <p class="projects-board-copy">current focus and recent work i still want front-and-center.</p>
+                    <h2 class="section-title">current active projects</h2>
+                    <p class="projects-board-copy">my staple & currently active projects</p>
                   </div>
                   <p class="project-carousel-count" data-project-carousel-count>01/03</p>
                 </div>
@@ -435,41 +437,44 @@
                 <div class="project-carousel-screen">
                   <div class="project-carousel-slides">
                     <article class="project-carousel-slide is-active" data-project-carousel-slide>
-                      <span class="project-card-year">2024</span>
+                      <span class="project-card-year">2022-2026</span>
                       <div class="project-card-head">
-                        <h3>ingot</h3>
-                        <span>co-founder</span>
+                        <h3>Starnova Studios</h3>
+                        <span>Founder & CEO</span>
                       </div>
                       <p class="project-card-copy">
-                        startup work around hosting, scaling, and making infra less painful for creators.
+                        Starnova Studios is a game studio that creates high-quality Minecraft networks. We
+                        develop, own, and run 4+ servers with around 1,000 player-average collectively.
                       </p>
-                      <div class="project-tag-row" aria-label="Ingot active tags">
-                        <span class="project-tag">infra</span>
-                        <span class="project-tag">ops</span>
-                        <span class="project-tag">startup</span>
+                      <div class="project-tag-row" aria-label="Starnova Studios active tags">
+                        <span class="project-tag">studio work</span>
+                        <span class="project-tag">development</span>
+                        <span class="project-tag">leadership</span>
                       </div>
-                      <button class="project-card-action project-inline-action" type="button" data-project-open="ingot"
-                        aria-haspopup="dialog">
+                      <button class="project-card-action project-inline-action" type="button"
+                        data-project-open="starnova" aria-haspopup="dialog">
                         open project
                       </button>
                     </article>
 
                     <article class="project-carousel-slide" data-project-carousel-slide aria-hidden="true">
-                      <span class="project-card-year">2024</span>
+                      <span class="project-card-year">2025-2026</span>
                       <div class="project-card-head">
-                        <h3>starfury</h3>
-                        <span>software + devops</span>
+                        <h3>Timbers Studios</h3>
+                        <span>Founding Software Engineer</span>
                       </div>
                       <p class="project-card-copy">
-                        large-scale studio systems work with a strong scale-first and UGC focus.
+                        Timbers Studios is the game development arm for Tubbo. We develop and create Minecraft networks,
+                        Bedrock Addons, and more. I am one of its' founding software engineers that helps lead
+                        development and runs our infrastructure.
                       </p>
-                      <div class="project-tag-row" aria-label="Starfury active tags">
-                        <span class="project-tag">ugc</span>
-                        <span class="project-tag">scale</span>
+                      <div class="project-tag-row" aria-label="Timbers Studios active tags">
+                        <span class="project-tag">development</span>
+                        <span class="project-tag">system ops</span>
                         <span class="project-tag">systems</span>
                       </div>
                       <button class="project-card-action project-inline-action" type="button"
-                        data-project-open="starfury" aria-haspopup="dialog">
+                        data-project-open="timbers" aria-haspopup="dialog">
                         open project
                       </button>
                     </article>
@@ -477,19 +482,21 @@
                     <article class="project-carousel-slide" data-project-carousel-slide aria-hidden="true">
                       <span class="project-card-year">2024</span>
                       <div class="project-card-head">
-                        <h3>personal blog</h3>
-                        <span>writer</span>
+                        <h3>ForgottenSMP</h3>
+                        <span>Lead Developer</span>
                       </div>
                       <p class="project-card-copy">
-                        ongoing writing about programming, business, project management, and the work around the work.
+                        ForgottenSMP is a D&D and Survival hybrid which brings roleplay and Minecraft together.
+                        It averages 300 players and I lead its' development as well as built the initial server
+                        from scratch.
                       </p>
-                      <div class="project-tag-row" aria-label="Personal blog active tags">
-                        <span class="project-tag">writing</span>
-                        <span class="project-tag">programming</span>
-                        <span class="project-tag">business</span>
+                      <div class="project-tag-row" aria-label="ForgottenSMP active tags">
+                        <span class="project-tag">development</span>
+                        <span class="project-tag">leadership</span>
+                        <span class="project-tag">scale</span>
                       </div>
-                      <button class="project-card-action project-inline-action" type="button" data-project-open="blog"
-                        aria-haspopup="dialog">
+                      <button class="project-card-action project-inline-action" type="button"
+                        data-project-open="forgottensmp" aria-haspopup="dialog">
                         open project
                       </button>
                     </article>
@@ -520,120 +527,104 @@
                 <div class="projects-board-head">
                   <div>
                     <h2 class="section-title">past work</h2>
-                    <p class="projects-board-copy">the wider archive from projects, studio roles, and older client work.
+                    <p class="projects-board-copy">projects i've previously been involved in or built myself.
                     </p>
                   </div>
                 </div>
 
                 <div class="project-grid">
-                  <button class="project-card" type="button" data-project-open="leone" aria-haspopup="dialog">
-                    <span class="project-card-year">2024</span>
+
+
+                  <button class="project-card" type="button" data-project-open="valorant" aria-haspopup="dialog">
+                    <span class="project-card-year">2024-2025</span>
                     <div class="project-card-head">
-                      <h3>leone</h3>
+                      <h3>valorant</h3>
+                      <span>lead developer</span>
+                    </div>
+                    <p class="project-card-copy">
+                      I led development and built the Minecraft network for VALORANT's Official Discord from scratch.
+                      With a 1,000 player concurrent launch, it was massively successful, generating over five figures
+                      in revenue on day one.
+                    </p>
+                    <div class="project-tag-row" aria-label="VALORANT Official Discord focus areas">
+                      <span class="project-tag">leadership</span>
+                      <span class="project-tag">content</span>
+                      <span class="project-tag">game design</span>
+                    </div>
+                    <span class="project-card-action">open project</span>
+                  </button>
+
+                  <button class="project-card" type="button" data-project-open="hideaway" aria-haspopup="dialog">
+                    <span class="project-card-year">2024-2025</span>
+                    <div class="project-card-head">
+                      <h3>hideaway</h3>
+                      <span>software & devops</span>
+                    </div>
+                    <p class="project-card-copy">
+                      Hideaway was a social Minecraft server on a tropical island built by Graser & Kiiingtong.
+                      I was a developer there who helped build their infrastructure, design gameplay elements, and
+                      create
+                      plugins for their network.
+                    </p>
+                    <div class="project-tag-row" aria-label="Hideaway focus areas">
+                      <span class="project-tag">system ops</span>
+                      <span class="project-tag">plugins</span>
+                      <span class="project-tag">game design</span>
+                    </div>
+                    <span class="project-card-action">open project</span>
+                  </button>
+
+                  <button class="project-card" type="button" data-project-open="starfury" aria-haspopup="dialog">
+                    <span class="project-card-year">2024-2025</span>
+                    <div class="project-card-head">
+                      <h3>starfury</h3>
+                      <span>software & devops</span>
+                    </div>
+                    <p class="project-card-copy">
+                      starfury was an MMORPG project in minecraft. i was a developer there, helping build their
+                      core plugins, design their RPG elements, and ran their infrastructure.
+                    </p>
+                    <div class="project-tag-row" aria-label="Starfury focus areas">
+                      <span class="project-tag">system ops</span>
+                      <span class="project-tag">plugins</span>
+                      <span class="project-tag">game design</span>
+                    </div>
+                    <span class="project-card-action">open project</span>
+                  </button>
+
+
+                  <button class="project-card" type="button" data-project-open="leonemc" aria-haspopup="dialog">
+                    <span class="project-card-year">2024-2026</span>
+                    <div class="project-card-head">
+                      <h3>leonemc</h3>
                       <span>software engineer</span>
                     </div>
                     <p class="project-card-copy">
-                      multi-game content work with a quality and engagement focus.
+                      leone is an 800+ player average network. i was a developer there, helping build their
+                      minigames, core plugins, and systems infrastructure.
                     </p>
-                    <div class="project-tag-row" aria-label="Leone focus areas">
-                      <span class="project-tag">content</span>
-                      <span class="project-tag">quality</span>
-                    </div>
-                    <span class="project-card-action">open project</span>
-                  </button>
-
-                  <button class="project-card" type="button" data-project-open="soul-realms" aria-haspopup="dialog">
-                    <span class="project-card-year">2022</span>
-                    <div class="project-card-head">
-                      <h3>soul realms</h3>
-                      <span>owner + operator</span>
-                    </div>
-                    <p class="project-card-copy">
-                      minecraft network with persistent gamemodes, built from scratch.
-                    </p>
-                    <div class="project-tag-row" aria-label="Soul Realms focus areas">
-                      <span class="project-tag">minecraft</span>
-                      <span class="project-tag">design</span>
-                    </div>
-                    <span class="project-card-action">open project</span>
-                  </button>
-
-                  <button class="project-card" type="button" data-project-open="slimymc" aria-haspopup="dialog">
-                    <span class="project-card-year">2023-2024</span>
-                    <div class="project-card-head">
-                      <h3>slimymc</h3>
-                      <span>devops engineer</span>
-                    </div>
-                    <p class="project-card-copy">
-                      scaling systems for a minigames network chasing hypixel-level capacity.
-                    </p>
-                    <div class="project-tag-row" aria-label="SlimyMC focus areas">
-                      <span class="project-tag">scaling</span>
-                      <span class="project-tag">operations</span>
+                    <div class="project-tag-row" aria-label="LeoneMC focus areas">
+                      <span class="project-tag">game design</span>
+                      <span class="project-tag">plugins</span>
+                      <span class="project-tag">system ops</span>
                     </div>
                     <span class="project-card-action">open project</span>
                   </button>
 
                   <button class="project-card" type="button" data-project-open="hoplite" aria-haspopup="dialog">
-                    <span class="project-card-year">2023</span>
+                    <span class="project-card-year">2023-2024</span>
                     <div class="project-card-head">
                       <h3>hoplite</h3>
-                      <span>devops engineer</span>
+                      <span>lead devops engineer</span>
                     </div>
                     <p class="project-card-copy">
-                      infrastructure for very large player counts under heavy load.
+                      i designed and led the infrastructure for Hoplite, a massive Battle Royale network
+                      which averages 1000-2000+ players.
                     </p>
                     <div class="project-tag-row" aria-label="Hoplite focus areas">
-                      <span class="project-tag">infra</span>
-                      <span class="project-tag">optimization</span>
-                    </div>
-                    <span class="project-card-action">open project</span>
-                  </button>
-
-                  <button class="project-card" type="button" data-project-open="disruption" aria-haspopup="dialog">
-                    <span class="project-card-year">2022-2024</span>
-                    <div class="project-card-head">
-                      <h3>disruption</h3>
-                      <span>co-owner</span>
-                    </div>
-                    <p class="project-card-copy">
-                      lore-heavy modded server built with custom packs and seasons.
-                    </p>
-                    <div class="project-tag-row" aria-label="Disruption focus areas">
-                      <span class="project-tag">modpacks</span>
-                      <span class="project-tag">community</span>
-                    </div>
-                    <span class="project-card-action">open project</span>
-                  </button>
-
-                  <button class="project-card" type="button" data-project-open="starnova" aria-haspopup="dialog">
-                    <span class="project-card-year">2022-2023</span>
-                    <div class="project-card-head">
-                      <h3>starnova</h3>
-                      <span>founder</span>
-                    </div>
-                    <p class="project-card-copy">
-                      developer and artist collective for player-facing game projects.
-                    </p>
-                    <div class="project-tag-row" aria-label="Starnova focus areas">
-                      <span class="project-tag">studio</span>
+                      <span class="project-tag">system ops</span>
+                      <span class="project-tag">scale ops</span>
                       <span class="project-tag">leadership</span>
-                    </div>
-                    <span class="project-card-action">open project</span>
-                  </button>
-
-                  <button class="project-card" type="button" data-project-open="starmc" aria-haspopup="dialog">
-                    <span class="project-card-year">2022-2023</span>
-                    <div class="project-card-head">
-                      <h3>starmc</h3>
-                      <span>dev + ops lead</span>
-                    </div>
-                    <p class="project-card-copy">
-                      plugin, setup, and operations leadership for a persistent gamemode network.
-                    </p>
-                    <div class="project-tag-row" aria-label="StarMC focus areas">
-                      <span class="project-tag">plugins</span>
-                      <span class="project-tag">ops</span>
                     </div>
                     <span class="project-card-action">open project</span>
                   </button>
@@ -642,14 +633,18 @@
                     <span class="project-card-year">2021-2023</span>
                     <div class="project-card-head">
                       <h3>freelance</h3>
-                      <span>variety of companies</span>
+                      <span>software & devops</span>
                     </div>
                     <p class="project-card-copy">
-                      early hands-on work across large and small teams.
+                      i worked with various clients to build and maintain their projects at scale. collectively, my work
+                      reached over 600,000 unique players
+                      and generated over six figures in revenue.
                     </p>
                     <div class="project-tag-row" aria-label="Freelance focus areas">
                       <span class="project-tag">client work</span>
                       <span class="project-tag">teamwork</span>
+                      <span class="project-tag">development</span>
+
                     </div>
                     <span class="project-card-action">open project</span>
                   </button>
@@ -658,38 +653,37 @@
               </section>
             </div>
 
-            <dialog class="project-modal" data-project-modal="ingot" aria-labelledby="project-modal-title-ingot">
+            <dialog class="project-modal" data-project-modal="timbers" aria-labelledby="project-modal-title-timbers">
               <article class="project-modal-shell">
-                <button class="project-modal-close" type="button" data-project-close aria-label="Close Ingot modal">
+                <button class="project-modal-close" type="button" data-project-close
+                  aria-label="Close Timbers Studios modal">
                   close
                 </button>
-                <p class="project-modal-kicker">2024 · co-founder</p>
-                <h2 class="project-modal-title" id="project-modal-title-ingot">ingot</h2>
+                <p class="project-modal-kicker">2025-2026 · founding software engineer</p>
+                <h2 class="project-modal-title" id="project-modal-title-timbers">Timbers Studios</h2>
                 <p class="project-modal-copy">
-                  a startup aimed at simplifying hosting and scaling so creators could focus on building.
+                  Tubbo's game development arm for Minecraft networks, Bedrock addons, and creator-led UGC work.
                 </p>
                 <div class="project-modal-grid">
                   <section class="project-modal-panel">
-                    <p class="project-modal-label">what i handled</p>
+                    <p class="project-modal-label">work</p>
                     <p>
-                      sales, relations, technical systems, and team management.
+                      founding-team engineering across gameplay systems, core development, and infrastructure.
                     </p>
                   </section>
                   <section class="project-modal-panel">
-                    <p class="project-modal-label">why it mattered</p>
+                    <p class="project-modal-label">impact</p>
                     <p>
-                      it started with creator ecosystems like Minecraft and Rust.
+                      helped shape the technical foundation while supporting a new studio tied directly to a major
+                      creator brand.
                     </p>
                   </section>
                 </div>
-                <div class="project-tag-row" aria-label="Ingot detail tags">
-                  <span class="project-tag">startup</span>
+                <div class="project-tag-row" aria-label="Timbers Studios detail tags">
+                  <span class="project-tag">founding team</span>
+                  <span class="project-tag">ugc</span>
                   <span class="project-tag">infrastructure</span>
-                  <span class="project-tag">team management</span>
-                </div>
-                <div class="project-modal-links">
-                  <a class="project-modal-link" href="https://ingot.gg/" target="_blank" rel="noreferrer">visit
-                    ingot</a>
+                  <span class="project-tag">development</span>
                 </div>
               </article>
             </dialog>
@@ -699,124 +693,132 @@
                 <button class="project-modal-close" type="button" data-project-close aria-label="Close Starfury modal">
                   close
                 </button>
-                <p class="project-modal-kicker">2024 · software + devops engineer</p>
+                <p class="project-modal-kicker">2024-2025 · software & devops</p>
                 <h2 class="project-modal-title" id="project-modal-title-starfury">starfury</h2>
                 <p class="project-modal-copy">
-                  a global studio building large-scale UGC experiences for players around the world.
+                  an MMORPG Minecraft project focused on custom RPG systems, infrastructure, and large-scale live
+                  operations.
                 </p>
                 <div class="project-modal-grid">
                   <section class="project-modal-panel">
                     <p class="project-modal-label">work</p>
                     <p>
-                      built scale-first systems and solved unusual technical problems with a distributed team.
+                      built core plugins, designed RPG mechanics, and ran the infrastructure behind the network.
                     </p>
                   </section>
                   <section class="project-modal-panel">
                     <p class="project-modal-label">takeaway</p>
                     <p>
-                      sharpened collaboration across timezones plus logical and creative problem solving.
+                      sharpened the overlap between gameplay design, backend systems, and operational reliability.
                     </p>
                   </section>
                 </div>
-                <div class="project-modal-links">
-                  <a class="project-modal-link" href="https://starfury.gg/" target="_blank" rel="noreferrer">visit
-                    starfury</a>
+                <div class="project-tag-row" aria-label="Starfury detail tags">
+                  <span class="project-tag">system ops</span>
+                  <span class="project-tag">plugins</span>
+                  <span class="project-tag">game design</span>
                 </div>
               </article>
             </dialog>
 
-            <dialog class="project-modal" data-project-modal="leone" aria-labelledby="project-modal-title-leone">
+            <dialog class="project-modal" data-project-modal="leonemc" aria-labelledby="project-modal-title-leonemc">
               <article class="project-modal-shell">
-                <button class="project-modal-close" type="button" data-project-close aria-label="Close Leone modal">
+                <button class="project-modal-close" type="button" data-project-close aria-label="Close LeoneMC modal">
                   close
                 </button>
-                <p class="project-modal-kicker">2024 · software engineer</p>
-                <h2 class="project-modal-title" id="project-modal-title-leone">leone</h2>
+                <p class="project-modal-kicker">2024-2026 · software engineer</p>
+                <h2 class="project-modal-title" id="project-modal-title-leonemc">LeoneMC</h2>
                 <p class="project-modal-copy">
-                  a multi-game studio building unique and engaging content for players.
+                  an 800+ average-player Minecraft network with custom minigames, core plugins, and systems
+                  infrastructure.
                 </p>
                 <div class="project-modal-grid">
                   <section class="project-modal-panel">
                     <p class="project-modal-label">work</p>
                     <p>
-                      shipped content, suggested improvements, and self-tested work for quality.
+                      helped build minigames, core plugins, and the infrastructure that kept the network running.
                     </p>
                   </section>
                   <section class="project-modal-panel">
                     <p class="project-modal-label">takeaway</p>
                     <p>
-                      strengthened game design basics, personal management, and engineering habits.
+                      strong mix of gameplay engineering, systems thinking, and scale-minded development.
                     </p>
                   </section>
+                </div>
+                <div class="project-tag-row" aria-label="LeoneMC detail tags">
+                  <span class="project-tag">game design</span>
+                  <span class="project-tag">plugins</span>
+                  <span class="project-tag">system ops</span>
                 </div>
                 <div class="project-modal-links">
                   <a class="project-modal-link" href="https://leonemc.net/" target="_blank" rel="noreferrer">visit
-                    leone</a>
+                    leonemc</a>
                 </div>
               </article>
             </dialog>
 
-            <dialog class="project-modal" data-project-modal="soul-realms"
-              aria-labelledby="project-modal-title-soul-realms">
+            <dialog class="project-modal" data-project-modal="valorant" aria-labelledby="project-modal-title-valorant">
               <article class="project-modal-shell">
                 <button class="project-modal-close" type="button" data-project-close
-                  aria-label="Close Soul Realms modal">
+                  aria-label="Close VALORANT Official Discord modal">
                   close
                 </button>
-                <p class="project-modal-kicker">2022 · owner + operator</p>
-                <h2 class="project-modal-title" id="project-modal-title-soul-realms">soul realms</h2>
+                <p class="project-modal-kicker">2025 · lead developer</p>
+                <h2 class="project-modal-title" id="project-modal-title-valorant">VALORANT</h2>
                 <p class="project-modal-copy">
-                  a Minecraft network designed around multiple unique persistent gamemodes.
-                </p>
-                <div class="project-modal-grid">
-                  <section class="project-modal-panel">
-                    <p class="project-modal-label">what i handled</p>
-                    <p>
-                      ownership, operations, and development from scratch.
-                    </p>
-                  </section>
-                  <section class="project-modal-panel">
-                    <p class="project-modal-label">what it taught me</p>
-                    <p>
-                      project management, game design, and deeper development experience.
-                    </p>
-                  </section>
-                </div>
-                <div class="project-tag-row" aria-label="Soul Realms detail tags">
-                  <span class="project-tag">persistent modes</span>
-                  <span class="project-tag">custom coded</span>
-                  <span class="project-tag">minecraft network</span>
-                </div>
-                <div class="project-modal-links">
-                  <a class="project-modal-link" href="https://soulrealms.net/" target="_blank" rel="noreferrer">visit
-                    soul realms</a>
-                </div>
-              </article>
-            </dialog>
-
-            <dialog class="project-modal" data-project-modal="slimymc" aria-labelledby="project-modal-title-slimymc">
-              <article class="project-modal-shell">
-                <button class="project-modal-close" type="button" data-project-close aria-label="Close SlimyMC modal">
-                  close
-                </button>
-                <p class="project-modal-kicker">2023-2024 · devops engineer</p>
-                <h2 class="project-modal-title" id="project-modal-title-slimymc">slimymc</h2>
-                <p class="project-modal-copy">
-                  a minigames network targeting hypixel-level scalability with player-focused gamemodes.
+                  the Minecraft network built from scratch for VALORANT's official Discord community.
                 </p>
                 <div class="project-modal-grid">
                   <section class="project-modal-panel">
                     <p class="project-modal-label">work</p>
                     <p>
-                      handled operations and systems, especially gamemode directives for scaling.
+                      led development and built the full network from the ground up for launch.
                     </p>
                   </section>
                   <section class="project-modal-panel">
-                    <p class="project-modal-label">note</p>
+                    <p class="project-modal-label">result</p>
                     <p>
-                      the project was later acquired by Starfury, where the work continued.
+                      launched at 1,000 concurrent players and generated over five figures in revenue on day one.
                     </p>
                   </section>
+                </div>
+                <div class="project-tag-row" aria-label="VALORANT Official Discord detail tags">
+                  <span class="project-tag">launch</span>
+                  <span class="project-tag">leadership</span>
+                  <span class="project-tag">revenue</span>
+                </div>
+              </article>
+            </dialog>
+
+            <dialog class="project-modal" data-project-modal="hideaway" aria-labelledby="project-modal-title-hideaway">
+              <article class="project-modal-shell">
+                <button class="project-modal-close" type="button" data-project-close aria-label="Close Hideaway modal">
+                  close
+                </button>
+                <p class="project-modal-kicker">2024-2025 · software & devops</p>
+                <h2 class="project-modal-title" id="project-modal-title-hideaway">hideaway</h2>
+                <p class="project-modal-copy">
+                  a social Minecraft server on a tropical island built by Graser and Kiiingtong.
+                </p>
+                <div class="project-modal-grid">
+                  <section class="project-modal-panel">
+                    <p class="project-modal-label">work</p>
+                    <p>
+                      helped build infrastructure, create plugins, and design the gameplay systems for the network.
+                    </p>
+                  </section>
+                  <section class="project-modal-panel">
+                    <p class="project-modal-label">context</p>
+                    <p>
+                      creator-led project work that mixed live operations, social design, and custom server development.
+                    </p>
+                  </section>
+                </div>
+                <div class="project-tag-row" aria-label="Hideaway detail tags">
+                  <span class="project-tag">system ops</span>
+                  <span class="project-tag">plugins</span>
+                  <span class="project-tag">game design</span>
                 </div>
               </article>
             </dialog>
@@ -826,24 +828,29 @@
                 <button class="project-modal-close" type="button" data-project-close aria-label="Close Hoplite modal">
                   close
                 </button>
-                <p class="project-modal-kicker">2023 · devops engineer</p>
+                <p class="project-modal-kicker">2023-2024 · lead devops engineer</p>
                 <h2 class="project-modal-title" id="project-modal-title-hoplite">hoplite</h2>
                 <p class="project-modal-copy">
-                  infrastructure work for a very large Minecraft network under resource-heavy gamemodes.
+                  a massive battle royale Minecraft network that regularly handled 1,000-2,000+ players.
                 </p>
                 <div class="project-modal-grid">
                   <section class="project-modal-panel">
                     <p class="project-modal-label">work</p>
                     <p>
-                      built and set up infrastructure aimed at extremely high player counts.
+                      designed and led the infrastructure needed to support very high player counts reliably.
                     </p>
                   </section>
                   <section class="project-modal-panel">
                     <p class="project-modal-label">takeaway</p>
                     <p>
-                      deepened devops, infrastructure operations, optimization, and team communication.
+                      deepened scale operations, optimization, and technical leadership under heavy live load.
                     </p>
                   </section>
+                </div>
+                <div class="project-tag-row" aria-label="Hoplite detail tags">
+                  <span class="project-tag">system ops</span>
+                  <span class="project-tag">scale ops</span>
+                  <span class="project-tag">leadership</span>
                 </div>
                 <div class="project-modal-links">
                   <a class="project-modal-link" href="https://hoplite.gg/" target="_blank" rel="noreferrer">visit
@@ -891,29 +898,29 @@
                 <button class="project-modal-close" type="button" data-project-close aria-label="Close Starnova modal">
                   close
                 </button>
-                <p class="project-modal-kicker">2022-2023 · founder</p>
-                <h2 class="project-modal-title" id="project-modal-title-starnova">starnova</h2>
+                <p class="project-modal-kicker">2022-2026 · founder & ceo</p>
+                <h2 class="project-modal-title" id="project-modal-title-starnova">Starnova Studios</h2>
                 <p class="project-modal-copy">
-                  a coalition of developers and artists working on original player experiences.
+                  a game studio building, owning, and operating high-quality Minecraft networks at meaningful scale.
                 </p>
                 <div class="project-modal-grid">
                   <section class="project-modal-panel">
-                    <p class="project-modal-label">what i handled</p>
+                    <p class="project-modal-label">work</p>
                     <p>
-                      founded the group and set direction across a multidisciplinary team.
+                      lead product direction, development, operations, and team management across the studio.
                     </p>
                   </section>
                   <section class="project-modal-panel">
-                    <p class="project-modal-label">why it mattered</p>
+                    <p class="project-modal-label">impact</p>
                     <p>
-                      it created structure for ambitious collaborative work.
+                      we develop, own, and run 4+ servers with around 1,000 average players collectively.
                     </p>
                   </section>
                 </div>
-                <div class="project-tag-row" aria-label="Starnova detail tags">
-                  <span class="project-tag">collective</span>
-                  <span class="project-tag">creative leadership</span>
-                  <span class="project-tag">team building</span>
+                <div class="project-tag-row" aria-label="Starnova Studios detail tags">
+                  <span class="project-tag">studio work</span>
+                  <span class="project-tag">development</span>
+                  <span class="project-tag">leadership</span>
                 </div>
                 <div class="project-modal-links">
                   <a class="project-modal-link" href="https://starnova.dev/" target="_blank" rel="noreferrer">visit
@@ -958,62 +965,60 @@
                 <p class="project-modal-kicker">2021-2023 · freelancer</p>
                 <h2 class="project-modal-title" id="project-modal-title-freelance">freelance</h2>
                 <p class="project-modal-copy">
-                  early work across a range of both large and small companies.
+                  early client work across a range of teams, projects, and technical needs.
                 </p>
                 <div class="project-modal-grid">
                   <section class="project-modal-panel">
                     <p class="project-modal-label">work</p>
                     <p>
-                      took on varied roles to build first-hand experience across different spaces.
+                      built and maintained projects at scale for multiple clients across development and infrastructure.
                     </p>
                   </section>
                   <section class="project-modal-panel">
-                    <p class="project-modal-label">takeaway</p>
+                    <p class="project-modal-label">impact</p>
                     <p>
-                      learned development, teamwork, and how to juggle multiple projects at once.
+                      the work reached over 600,000 unique players and generated over six figures in revenue.
                     </p>
                   </section>
                 </div>
-                <div class="project-modal-links">
-                  <a class="project-modal-link" href="https://jos.gg/work/" target="_blank" rel="noreferrer">view work
-                    list</a>
+                <div class="project-tag-row" aria-label="Freelance detail tags">
+                  <span class="project-tag">client work</span>
+                  <span class="project-tag">teamwork</span>
+                  <span class="project-tag">development</span>
                 </div>
               </article>
             </dialog>
 
-            <dialog class="project-modal" data-project-modal="blog" aria-labelledby="project-modal-title-blog">
+            <dialog class="project-modal" data-project-modal="forgottensmp"
+              aria-labelledby="project-modal-title-forgottensmp">
               <article class="project-modal-shell">
                 <button class="project-modal-close" type="button" data-project-close
-                  aria-label="Close Personal Blog modal">
+                  aria-label="Close ForgottenSMP modal">
                   close
                 </button>
-                <p class="project-modal-kicker">2024 · writer</p>
-                <h2 class="project-modal-title" id="project-modal-title-blog">personal blog</h2>
+                <p class="project-modal-kicker">2024 · lead developer</p>
+                <h2 class="project-modal-title" id="project-modal-title-forgottensmp">ForgottenSMP</h2>
                 <p class="project-modal-copy">
-                  a personal blog covering programming, business, project management, and life around work.
+                  a D&D-and-survival hybrid server that brought roleplay and Minecraft together.
                 </p>
                 <div class="project-modal-grid">
                   <section class="project-modal-panel">
-                    <p class="project-modal-label">what i handled</p>
+                    <p class="project-modal-label">work</p>
                     <p>
-                      writing and publishing posts around technical and project-focused topics.
+                      led development and built the initial server from scratch.
                     </p>
                   </section>
                   <section class="project-modal-panel">
-                    <p class="project-modal-label">why it matters</p>
+                    <p class="project-modal-label">scale</p>
                     <p>
-                      it captures the thinking behind the work, not just the shipped outcomes.
+                      averaged around 300 players while supporting a roleplay-heavy gameplay loop.
                     </p>
                   </section>
                 </div>
-                <div class="project-tag-row" aria-label="Personal Blog detail tags">
-                  <span class="project-tag">medium</span>
-                  <span class="project-tag">programming</span>
-                  <span class="project-tag">project management</span>
-                </div>
-                <div class="project-modal-links">
-                  <a class="project-modal-link" href="https://medium.com/@josthedude" target="_blank"
-                    rel="noreferrer">read the blog</a>
+                <div class="project-tag-row" aria-label="ForgottenSMP detail tags">
+                  <span class="project-tag">development</span>
+                  <span class="project-tag">leadership</span>
+                  <span class="project-tag">scale</span>
                 </div>
               </article>
             </dialog>
