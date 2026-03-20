@@ -72,7 +72,7 @@
       countNode.textContent = `${formatCount(activeIndex + 1)}/${formatCount(total)}`;
     }
 
-    syncHeight();
+    window.requestAnimationFrame(syncHeight);
   };
 
   const startRotation = () => {
