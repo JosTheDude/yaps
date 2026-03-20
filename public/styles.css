@@ -2626,6 +2626,10 @@ html:has(#tab-contact:target) .brand-nav-link-contact::after {
     text-align: left;
   }
 
+  .workspace-board-note-ps {
+    display: none;
+  }
+
   .sticky-note {
     position: relative;
     inset: auto;
