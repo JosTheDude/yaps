@@ -1108,20 +1108,24 @@ html:has(#tab-contact:target) .brand-nav-link-contact::after {
 
 .client-carousel-window {
   width: 188px;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   mask-image: linear-gradient(to right, transparent, black 18%, black 82%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 18%, black 82%, transparent);
+  scrollbar-width: none;
+  touch-action: pan-y;
 }
 
 .client-carousel-track {
   display: flex;
   gap: 10px;
   width: max-content;
-  animation: client-scroll 18s linear infinite;
+  padding-bottom: 2px;
 }
 
-.client-carousel-card:hover .client-carousel-track {
-  animation-play-state: paused;
+.client-carousel-window.is-dragging,
+.client-carousel-window.is-dragging * {
+  user-select: none;
 }
 
 .client-carousel-item {
@@ -1132,6 +1136,10 @@ html:has(#tab-contact:target) .brand-nav-link-contact::after {
 
 .client-carousel-item:hover {
   opacity: 1;
+}
+
+.client-carousel-window::-webkit-scrollbar {
+  display: none;
 }
 
 .client-profile-image {
@@ -1151,6 +1159,7 @@ html:has(#tab-contact:target) .brand-nav-link-contact::after {
     border-color var(--motion-fast) ease,
     background-color var(--motion-fast) ease,
     box-shadow var(--motion-fast) ease;
+  -webkit-user-drag: none;
 }
 
 .client-profile-image-brand {
@@ -1160,22 +1169,6 @@ html:has(#tab-contact:target) .brand-nav-link-contact::after {
     radial-gradient(circle at top, rgba(213, 142, 245, 0.18), transparent 58%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
     #332f3d;
-}
-
-@keyframes client-scroll {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .client-carousel-track {
-    animation: none;
-  }
 }
 
 .active-projects-card {
@@ -2644,9 +2637,48 @@ html:has(#tab-contact:target) .brand-nav-link-contact::after {
     grid-template-columns: 1fr;
   }
 
+  .page-intro-card:has(.client-carousel-card) {
+    position: relative;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding-right: 118px;
+    min-height: 124px;
+  }
+
+  .projects-hero-copy {
+    min-height: 92px;
+  }
+
   .client-carousel-card {
-    justify-items: center;
-    width: 100%;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    justify-items: end;
+    width: 92px;
+    gap: 4px;
+    padding: 0;
+  }
+
+  .client-carousel-label {
+    margin-bottom: 1px;
+    font-size: 0.4rem;
+    text-align: right;
+    letter-spacing: 0.08em;
+  }
+
+  .client-carousel-window {
+    width: 92px;
+  }
+
+  .client-carousel-track {
+    gap: 6px;
+  }
+
+  .client-profile-image {
+    width: 50px;
+    height: 50px;
+    border-width: 3px;
+    box-shadow: 4px 4px 0 rgba(18, 16, 24, 0.2);
   }
 
   .project-carousel-slide {

@@ -88,7 +88,7 @@
       <div class="tab-stage">
         <div class="tab-track">
           <section class="tab-panel">
-            <div class="main-grid">
+            <div class="main-grid home-grid">
               <div class="main-stack">
                 <section class="panel-card intro-card">
                   <div class="avatar-shell" aria-hidden="true">
@@ -131,11 +131,15 @@
                 </section>
 
                 <section class="panel-card badges-card">
-                  <h2 class="section-title">links</h2>
+                  <h2 class="section-title">friends & colleagues</h2>
                   <div class="badge-grid" aria-label="88x31 links">
                     <a class="badge-tile badge-tile-own" href="https://jos.gg" target="_blank" rel="noreferrer"
                       aria-label="jos.gg">
-                      <img src="./88x31s/jos.svg" alt="jos.gg 88x31 button" width="88" height="31">
+                      <img src="./88x31s/jos.png" alt="jos.gg 88x31 button" width="88" height="31">
+                    </a>
+                    <a class="badge-tile badge-tile-own" href="https://prpl.wtf" target="_blank" rel="noreferrer"
+                      aria-label="prpl.wtf">
+                      <img src="./88x31s/emma.png" alt="prpl.wtf 88x31 button" width="88" height="31">
                     </a>
                   </div>
                 </section>
@@ -353,7 +357,8 @@
                   <div class="client-carousel-head">
                     <p class="client-carousel-label">some of my clients</p>
                   </div>
-                  <div class="client-carousel-window">
+                  <div class="client-carousel-window" data-client-carousel
+                    aria-label="Scrollable list of clients">
                     <div class="client-carousel-track">
                       <article class="client-carousel-item">
                         <img class="client-profile-image" src="./client-images/minutetech.jpg" alt="MinuteTech"
@@ -387,7 +392,6 @@
                         <img class="client-profile-image" src="./client-images/kiiingtong.jpg" alt="Kiiingtong"
                           loading="lazy" decoding="async">
                       </article>
-                      <!-- duplicates for seamless loop -->
                       <article class="client-carousel-item" aria-hidden="true">
                         <img class="client-profile-image" src="./client-images/minutetech.jpg" alt="" loading="lazy"
                           decoding="async">
@@ -413,7 +417,7 @@
                           decoding="async">
                       </article>
                       <article class="client-carousel-item" aria-hidden="true">
-                        <img class="client-profile-image" src="./client-images/hoplite.png" alt="" loading="lazy"
+                        <img class="client-profile-image" src="./client-images/hoplite.jpg" alt="" loading="lazy"
                           decoding="async">
                       </article>
                       <article class="client-carousel-item" aria-hidden="true">
@@ -1113,6 +1117,8 @@
   <script src="./js/modals.js"></script>
   <script src="./js/lanyard.js"></script>
   <script src="./js/testimonial-carousel.js"></script>
+  <script src="./js/home-mobile-order.js"></script>
+  <script src="./js/client-carousel.js"></script>
   <script src="./js/project-carousel.js"></script>
   <script src="./js/sticky-notes.js"></script>
   <script src="./js/confetti.js"></script>
