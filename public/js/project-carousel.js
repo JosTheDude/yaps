@@ -6,6 +6,7 @@
   }
 
   const slides = Array.from(carousel.querySelectorAll("[data-project-carousel-slide]"));
+  const slidesFrame = carousel.querySelector(".project-carousel-slides");
   const dots = Array.from(carousel.querySelectorAll("[data-project-carousel-dot]"));
   const countNode = carousel.querySelector("[data-project-carousel-count]");
   const prevButton = carousel.querySelector("[data-project-carousel-prev]");
@@ -15,6 +16,8 @@
   const formatCount = (value) => String(value).padStart(2, "0");
   let activeIndex = 0;
   let rotationTimer = 0;
+  let heightFrame = 0;
+  let activeSlideObserver = null;
 
   const stopRotation = () => {
     if (!rotationTimer) {
@@ -23,6 +26,47 @@
 
     window.clearInterval(rotationTimer);
     rotationTimer = 0;
+  };
+
+  const syncHeight = () => {
+    if (!slidesFrame) {
+      return;
+    }
+
+    const activeSlide = slides[activeIndex];
+
+    if (!activeSlide) {
+      return;
+    }
+
+    if (heightFrame) {
+      window.cancelAnimationFrame(heightFrame);
+    }
+
+    heightFrame = window.requestAnimationFrame(() => {
+      slidesFrame.style.height = `${Math.ceil(activeSlide.offsetHeight + 20)}px`;
+      heightFrame = 0;
+    });
+  };
+
+  const observeActiveSlide = () => {
+    if (typeof ResizeObserver !== "function") {
+      return;
+    }
+
+    if (!activeSlideObserver) {
+      activeSlideObserver = new ResizeObserver(() => {
+        syncHeight();
+      });
+    }
+
+    activeSlideObserver.disconnect();
+
+    const activeSlide = slides[activeIndex];
+
+    if (activeSlide) {
+      activeSlideObserver.observe(activeSlide);
+    }
   };
 
   const updateSlide = (nextIndex) => {
@@ -50,6 +94,9 @@
     if (countNode) {
       countNode.textContent = `${formatCount(activeIndex + 1)}/${formatCount(total)}`;
     }
+
+    observeActiveSlide();
+    syncHeight();
   };
 
   const startRotation = () => {
@@ -108,6 +155,14 @@
   const handleMotionChange = () => {
     startRotation();
   };
+
+  window.addEventListener("resize", syncHeight);
+
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(() => {
+      syncHeight();
+    });
+  }
 
   if (typeof reduceMotion.addEventListener === "function") {
     reduceMotion.addEventListener("change", handleMotionChange);
