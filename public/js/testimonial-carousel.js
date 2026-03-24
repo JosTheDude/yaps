@@ -84,7 +84,7 @@
 
     rotationTimer = window.setInterval(() => {
       updateSlide(activeIndex + 1);
-    }, 5600);
+    }, 8000);
   };
 
   prevButton?.addEventListener("click", () => {
