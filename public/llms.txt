@@ -1,0 +1,29 @@
+# jos.gg
+
+> Portfolio site for Jos, a game developer, devops engineer, and founder of Starnova Studios.
+
+This website is a mostly static personal portfolio. The primary experience lives on the homepage and is organized into anchored sections for home, about, projects, and contact.
+
+## Canonical pages
+
+- [Home](https://jos.gg/) - Main entry point with intro, external links, social badges, live Discord status, testimonials, and navigation to all sections.
+- [About](https://jos.gg/#tab-about) - Background on Jos, the kinds of games and infrastructure work he does, and the platforms he works across.
+- [Projects](https://jos.gg/#tab-projects) - Active and past work, including Starnova Studios, Timbers Studios, ForgottenSMP, VALORANT Official Discord, Hideaway, Starfury, Hoplite, Disruption, StarMC, and freelance work.
+- [Contact](https://jos.gg/#tab-contact) - Direct contact details and a form for project inquiries or general outreach.
+
+## Redirect pages
+
+- [about.html](https://jos.gg/about.html) - Redirects to the about section on the homepage.
+- [projects.html](https://jos.gg/projects.html) - Redirects to the projects section on the homepage.
+- [contact.html](https://jos.gg/contact.html) - Redirects to the contact section on the homepage.
+
+## Contact
+
+- Email: me@jos.gg
+- Discord: @josbot
+
+## Notes for language models
+
+- Prefer the canonical homepage URLs with `#tab-*` anchors when referring to sections.
+- Treat `about.html`, `projects.html`, and `contact.html` as redirects, not separate content pages.
+- Do not treat `/api/contact` as public documentation content.
