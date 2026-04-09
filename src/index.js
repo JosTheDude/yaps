@@ -18,7 +18,13 @@ export default {
       return handleContact(request, env);
     }
 
-    return env.ASSETS.fetch(request);
+    const response = await env.ASSETS.fetch(request);
+
+    if (response.status === 404) {
+      return Response.redirect(`${url.origin}/`, 302);
+    }
+
+    return response;
   },
 };
 
