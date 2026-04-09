@@ -3,8 +3,8 @@
   "private": true,
   "packageManager": "bun@1.1.34",
   "scripts": {
-    "cf:whoami": "wrangler -c workers.toml whoami",
-    "dev": "wrangler -c workers.toml dev",
+    "cf:whoami": "wrangler whoami",
+    "dev": "wrangler dev",
     "deploy": "wrangler deploy",
     "preview": "wrangler dev"
   },

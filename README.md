@@ -6,11 +6,12 @@ Check it out here: https://jos.gg/
 
 ## Cloudflare Workers
 
-This repo is configured to deploy as a Cloudflare Worker using [`workers.toml`](./workers.toml).
+This repo is configured to deploy as a Cloudflare Worker using [`wrangler.toml`](./wrangler.toml).
 
 ### Local development
 
 ```bash
+loadnvm
 bun install
 bun run dev
 ```
@@ -18,7 +19,8 @@ bun run dev
 ### Deploy
 
 ```bash
-bun run wrangler secret put DISCORD_WEBHOOK
+loadnvm
+bunx wrangler secret put DISCORD_WEBHOOK
 bun run cf:whoami
 bun run deploy
 ```

@@ -43,10 +43,11 @@
         status.dataset.state = "success";
         form.reset();
       } else {
-        throw new Error(`HTTP ${res.status}`);
+        const errorMessage = (await res.text()).trim();
+        throw new Error(errorMessage || `http ${res.status}`);
       }
-    } catch {
-      status.textContent = "something went wrong — try emailing me directly!";
+    } catch (error) {
+      status.textContent = error.message || "something went wrong. try emailing me directly!";
       status.dataset.state = "error";
     } finally {
       submitBtn.disabled = false;

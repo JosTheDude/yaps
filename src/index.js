@@ -71,7 +71,10 @@ function handleRobots(url) {
 
 async function handleContact(request, env) {
   if (!env.DISCORD_WEBHOOK) {
-    return new Response("contact unavailable", { status: 503 });
+    console.error("contact unavailable: missing DISCORD_WEBHOOK secret");
+    return new Response("contact form is not configured right now. email me directly at me@jos.gg.", {
+      status: 503,
+    });
   }
 
   let body;
@@ -109,14 +112,26 @@ async function handleContact(request, env) {
     }],
   };
 
-  const discordRes = await fetch(env.DISCORD_WEBHOOK, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
+  let discordRes;
+  try {
+    discordRes = await fetch(env.DISCORD_WEBHOOK, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+  } catch (error) {
+    console.error("discord webhook request failed", error);
+    return new Response("message delivery failed. email me directly at me@jos.gg.", {
+      status: 502,
+    });
+  }
 
   if (!discordRes.ok) {
-    return new Response("failed to send", { status: 502 });
+    const discordError = await discordRes.text();
+    console.error("discord webhook rejected request", discordRes.status, discordError);
+    return new Response("message delivery failed. email me directly at me@jos.gg.", {
+      status: 502,
+    });
   }
 
   return new Response("ok", { status: 200 });
