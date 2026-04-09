@@ -18,13 +18,22 @@ export default {
       return handleContact(request, env);
     }
 
-    const response = await env.ASSETS.fetch(request);
+    try {
+      const response = await env.ASSETS.fetch(request);
 
-    if (response.status === 404) {
-      return Response.redirect(`${url.origin}/`, 302);
+      if (response.status === 404 && url.pathname !== "/") {
+        return Response.redirect(`${url.origin}/`, 302);
+      }
+
+      return response;
+    } catch (error) {
+      if (url.pathname !== "/") {
+        return Response.redirect(`${url.origin}/`, 302);
+      }
+
+      console.error("asset fetch failed", error);
+      return new Response("internal error", { status: 500 });
     }
-
-    return response;
   },
 };
 
