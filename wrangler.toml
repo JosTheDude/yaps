@@ -2,6 +2,8 @@ name = "yaps"
 main = "src/index.js"
 compatibility_date = "2026-03-17"
 
+compatibility_flags = ["nodejs_compat"]
+
 [assets]
 directory = "./public"
 html_handling = "auto-trailing-slash"
