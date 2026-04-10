@@ -16,6 +16,9 @@
   const formatCount = (value) => String(value).padStart(2, "0");
   let activeIndex = 0;
   let rotationTimer = 0;
+  let isInView = true;
+  let isHovered = false;
+  let isFocusedWithin = false;
 
   if (!total) {
     return;
@@ -30,6 +33,15 @@
 
     window.clearInterval(rotationTimer);
     rotationTimer = 0;
+  };
+
+  const canRotate = () => {
+    return !reduceMotion.matches
+      && total >= 2
+      && isInView
+      && !document.hidden
+      && !isHovered
+      && !isFocusedWithin;
   };
 
   const syncHeight = () => {
@@ -78,7 +90,7 @@
   const startRotation = () => {
     stopRotation();
 
-    if (reduceMotion.matches || total < 2) {
+    if (!canRotate()) {
       return;
     }
 
@@ -104,16 +116,30 @@
     });
   });
 
-  carousel.addEventListener("pointerenter", stopRotation);
-  carousel.addEventListener("pointerleave", startRotation);
-  carousel.addEventListener("focusin", stopRotation);
+  carousel.addEventListener("pointerenter", () => {
+    isHovered = true;
+    stopRotation();
+  });
+  carousel.addEventListener("pointerleave", () => {
+    isHovered = false;
+    startRotation();
+  });
+  carousel.addEventListener("focusin", () => {
+    isFocusedWithin = true;
+    stopRotation();
+  });
   carousel.addEventListener("focusout", (event) => {
     if (!carousel.contains(event.relatedTarget)) {
+      isFocusedWithin = false;
       startRotation();
     }
   });
 
   const handleMotionChange = () => {
+    startRotation();
+  };
+
+  const handleVisibilityChange = () => {
     startRotation();
   };
 
@@ -125,6 +151,19 @@
     reduceMotion.addEventListener("change", handleMotionChange);
   } else if (typeof reduceMotion.addListener === "function") {
     reduceMotion.addListener(handleMotionChange);
+  }
+
+  document.addEventListener("visibilitychange", handleVisibilityChange);
+
+  if (typeof IntersectionObserver === "function") {
+    const observer = new IntersectionObserver(([entry]) => {
+      isInView = Boolean(entry?.isIntersecting && entry.intersectionRatio >= 0.35);
+      startRotation();
+    }, {
+      threshold: [0.35]
+    });
+
+    observer.observe(carousel);
   }
 
   updateSlide(0);

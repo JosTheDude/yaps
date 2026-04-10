@@ -16,6 +16,17 @@
   let animationFrame = 0;
   let currentScrollLeft = 0;
   let manualPauseUntil = 0;
+  let isInView = true;
+  let isHovered = false;
+
+  const canAutoScroll = (timestamp) => {
+    return !isDragging
+      && !reduceMotion.matches
+      && isInView
+      && !document.hidden
+      && !isHovered
+      && timestamp >= manualPauseUntil;
+  };
 
   const getLoopWidth = () => track.scrollWidth / 2;
 
@@ -68,7 +79,7 @@
     const elapsed = timestamp - lastFrameTime;
     lastFrameTime = timestamp;
 
-    if (!isDragging && !reduceMotion.matches && timestamp >= manualPauseUntil) {
+    if (canAutoScroll(timestamp)) {
       syncScrollLeft(currentScrollLeft + elapsed * autoScrollSpeed);
     }
 
@@ -87,6 +98,14 @@
     pauseAutoScroll();
     carousel.classList.add("is-dragging");
     carousel.setPointerCapture(event.pointerId);
+  });
+
+  carousel.addEventListener("pointerenter", () => {
+    isHovered = true;
+  });
+
+  carousel.addEventListener("pointerleave", () => {
+    isHovered = false;
   });
 
   carousel.addEventListener("pointermove", (event) => {
@@ -122,6 +141,16 @@
   }, { passive: false });
   syncScrollLeft(0);
   animationFrame = window.requestAnimationFrame(tick);
+
+  if (typeof IntersectionObserver === "function") {
+    const observer = new IntersectionObserver(([entry]) => {
+      isInView = Boolean(entry?.isIntersecting && entry.intersectionRatio >= 0.35);
+    }, {
+      threshold: [0.35]
+    });
+
+    observer.observe(carousel);
+  }
 
   window.addEventListener("beforeunload", () => {
     window.cancelAnimationFrame(animationFrame);
