@@ -2446,8 +2446,7 @@ html:has(#tab-contact:target) .brand-nav-link-contact::after {
   }
 
   .masthead-badge-stack {
-    justify-self: end;
-    justify-content: flex-end;
+    display: none;
   }
 
   .masthead-contact-shell {
@@ -2493,15 +2492,7 @@ html:has(#tab-contact:target) .brand-nav-link-contact::after {
   }
 
   .masthead-badge-stack {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    justify-self: start;
-    align-self: center;
-    gap: 6px;
-    margin-left: 10px;
-    margin-bottom: 5px;
+    display: none;
   }
 
   .masthead-contact-shell {
