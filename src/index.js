@@ -1,4 +1,13 @@
 const sitemapRoutes = ["/"];
+const servers = [
+  { name: "SoulRealms", address: "play.soulrealms.net" },
+  { name: "RealmSMP", address: "play.realmsmp.net" },
+  { name: "ForgottenSMP", address: "play.forgottensmp.net" },
+  { name: "Hoplite", address: "play.hoplite.gg" },
+  { name: "LeoneMC", address: "play.leonemc.net" },
+  { name: "MineHeart", address: "play.mineheart.net" },
+  { name: "ZedarMC", address: "play.zedarmc.com" },
+];
 
 export default {
   async fetch(request, env) {
@@ -11,6 +20,10 @@ export default {
 
       if (url.pathname === "/robots.txt") {
         return handleRobots(url);
+      }
+
+      if (url.pathname === "/api/stats") {
+        return handleStats();
       }
     }
 
@@ -65,6 +78,38 @@ function handleRobots(url) {
     headers: {
       "Content-Type": "text/plain; charset=UTF-8",
       "Cache-Control": "public, max-age=3600",
+    },
+  });
+}
+
+async function handleStats() {
+  const now = Date.now();
+  const results = await Promise.allSettled(servers.map(fetchServerStatus));
+  const serverList = results.map((result, index) => {
+    if (result.status === "fulfilled") {
+      return result.value;
+    }
+
+    const server = servers[index];
+    return {
+      name: server.name,
+      address: server.address,
+      online: false,
+      players: 0,
+      maxPlayers: null,
+    };
+  });
+
+  return json({
+    playerTracker: {
+      totalOnline: serverList.reduce((sum, server) => sum + server.players, 0),
+      servers: serverList,
+      updatedAt: now,
+    },
+    updatedAt: new Date(now).toISOString(),
+  }, {
+    headers: {
+      "Cache-Control": "public, max-age=30",
     },
   });
 }
@@ -144,4 +189,44 @@ function escapeXml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&apos;");
+}
+
+async function fetchServerStatus(server) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 4500);
+
+  try {
+    const response = await fetch(`https://api.mcstatus.io/v2/status/java/${server.address}`, {
+      signal: controller.signal,
+      headers: {
+        "User-Agent": "jos.gg player tracker",
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`mcstatus rejected ${server.address}: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    return {
+      name: server.name,
+      address: server.address,
+      online: Boolean(data.online),
+      players: Number(data.players?.online ?? 0),
+      maxPlayers: Number.isFinite(data.players?.max) ? data.players.max : null,
+    };
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+function json(body, init = {}) {
+  return new Response(JSON.stringify(body), {
+    ...init,
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      ...(init.headers ?? {}),
+    },
+  });
 }
