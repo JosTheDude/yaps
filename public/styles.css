@@ -570,6 +570,50 @@ html:has(#tab-contact:target) .brand-nav-link-contact::after {
   padding-bottom: 16px;
 }
 
+.player-stats-pulse {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 6px;
+  padding: 4px 6px 3px;
+  border: 2px solid rgba(42, 40, 49, 0.92);
+  background: rgba(69, 66, 81, 0.88);
+  color: var(--muted);
+  font-family: "Silkscreen", monospace;
+  font-size: 0.48rem;
+  line-height: 1;
+  text-transform: lowercase;
+  vertical-align: middle;
+}
+
+.player-stats-pulse[data-player-stats-state="live"] {
+  background: rgba(111, 226, 157, 0.16);
+  color: #bff5d2;
+}
+
+.player-stats-pulse[data-player-stats-state="stale"] {
+  background: rgba(255, 209, 102, 0.16);
+  color: #ffe2a0;
+}
+
+.player-stats-line {
+  color: var(--muted);
+}
+
+.player-stats-line strong {
+  display: inline-block;
+  margin: 0 5px;
+  color: #fff9ff;
+  font-family: "Silkscreen", monospace;
+  font-size: 0.94em;
+  line-height: 1;
+  text-align: left;
+  text-shadow:
+    0 0 14px rgba(213, 142, 245, 0.34),
+    3px 3px 0 rgba(18, 16, 24, 0.36);
+  white-space: nowrap;
+  transform: translateY(1px);
+}
+
 .status-screen {
   display: grid;
   gap: 12px;
