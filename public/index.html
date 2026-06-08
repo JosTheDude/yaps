@@ -1133,13 +1133,22 @@
                         <textarea class="contact-input contact-textarea" id="cf-message" name="message"
                           placeholder="tell me more..." rows="5" required></textarea>
                       </div>
-                      <div class="contact-turnstile cf-turnstile" data-sitekey="0x4AAAAAADg1ydBwnn4zCnPg"
-                        data-theme="dark"></div>
                       <div class="contact-form-footer">
                         <p class="contact-form-status" id="cf-status" aria-live="polite"></p>
                         <button class="contact-submit" type="submit" id="cf-submit">send message</button>
                       </div>
                     </form>
+                    <div class="contact-verify-modal" id="contact-verify-modal" aria-hidden="true">
+                      <div class="contact-verify-backdrop" data-contact-verify-close></div>
+                      <div class="contact-verify-card" role="dialog" aria-modal="true" aria-labelledby="contact-verify-title">
+                        <div class="contact-verify-head">
+                          <p class="contact-verify-title" id="contact-verify-title">quick check</p>
+                          <button class="contact-verify-close" type="button" data-contact-verify-close
+                            aria-label="Close verification">&times;</button>
+                        </div>
+                        <div class="contact-turnstile" id="contact-turnstile"></div>
+                      </div>
+                    </div>
                   </div>
                 </section>
               </div>

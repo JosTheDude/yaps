@@ -3174,7 +3174,9 @@ html:has(#tab-contact:target) .brand-nav-link-contact::after {
 }
 
 .contact-turnstile {
+  width: 300px;
   min-height: 65px;
+  max-width: 100%;
 }
 
 .contact-form-footer {
@@ -3248,6 +3250,78 @@ html:has(#tab-contact:target) .brand-nav-link-contact::after {
   transform: none;
 }
 
+.contact-verify-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--motion-fast) ease;
+}
+
+.contact-verify-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.contact-verify-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 16, 24, 0.72);
+  backdrop-filter: blur(4px);
+}
+
+.contact-verify-card {
+  position: relative;
+  width: min(100%, 370px);
+  padding: 18px;
+  border: 4px solid rgba(223, 192, 244, 0.28);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 44%),
+    #221f2b;
+  box-shadow:
+    10px 10px 0 rgba(16, 14, 22, 0.28),
+    0 20px 60px rgba(0, 0, 0, 0.28);
+}
+
+.contact-verify-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.contact-verify-title {
+  margin: 0;
+  font-family: "Silkscreen", monospace;
+  font-size: 0.72rem;
+  line-height: 1;
+  text-transform: lowercase;
+  color: var(--accent);
+}
+
+.contact-verify-close {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(223, 192, 244, 0.24);
+  background: rgba(255, 255, 255, 0.04);
+  color: #f5ebff;
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.contact-verify-close:hover,
+.contact-verify-close:focus-visible {
+  border-color: rgba(223, 192, 244, 0.46);
+}
+
 @media (max-width: 720px) {
   .contact-methods {
     grid-template-columns: 1fr;
@@ -3268,7 +3342,7 @@ html:has(#tab-contact:target) .brand-nav-link-contact::after {
 
   .contact-form-footer {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
   }
 
   .contact-submit {
