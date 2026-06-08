@@ -3173,6 +3173,10 @@ html:has(#tab-contact:target) .brand-nav-link-contact::after {
   min-height: 130px;
 }
 
+.contact-turnstile {
+  min-height: 65px;
+}
+
 .contact-form-footer {
   display: flex;
   align-items: center;

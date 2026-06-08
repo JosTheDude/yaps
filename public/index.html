@@ -46,6 +46,7 @@
       rel="stylesheet">
   </noscript>
   <link rel="stylesheet" href="./styles.css">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 <body>
@@ -1132,6 +1133,8 @@
                         <textarea class="contact-input contact-textarea" id="cf-message" name="message"
                           placeholder="tell me more..." rows="5" required></textarea>
                       </div>
+                      <div class="contact-turnstile cf-turnstile" data-sitekey="0x4AAAAAADg1ydBwnn4zCnPg"
+                        data-theme="dark"></div>
                       <div class="contact-form-footer">
                         <p class="contact-form-status" id="cf-status" aria-live="polite"></p>
                         <button class="contact-submit" type="submit" id="cf-submit">send message</button>

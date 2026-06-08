@@ -122,6 +122,13 @@ async function handleContact(request, env) {
     });
   }
 
+  if (!env.TURNSTILE_SECRET_KEY) {
+    console.error("contact unavailable: missing TURNSTILE_SECRET_KEY secret");
+    return new Response("contact form is not configured right now. email me directly at me@jos.gg.", {
+      status: 503,
+    });
+  }
+
   let body;
   try {
     body = await request.json();
@@ -129,10 +136,20 @@ async function handleContact(request, env) {
     return new Response("invalid json", { status: 400 });
   }
 
-  const { name, email, discord, subject, message } = body;
+  const { name, email, discord, subject, message, turnstileToken } = body;
 
   if (!name || !email || !subject || !message) {
     return new Response("missing required fields", { status: 400 });
+  }
+
+  if (!turnstileToken) {
+    return new Response("missing verification", { status: 400 });
+  }
+
+  const turnstileResult = await verifyTurnstile(turnstileToken, env.TURNSTILE_SECRET_KEY, request);
+
+  if (!turnstileResult.success) {
+    return new Response("verification failed. please try again.", { status: 403 });
   }
 
   const now = new Date();
@@ -180,6 +197,34 @@ async function handleContact(request, env) {
   }
 
   return new Response("ok", { status: 200 });
+}
+
+async function verifyTurnstile(token, secret, request) {
+  const formData = new FormData();
+  formData.append("secret", secret);
+  formData.append("response", token);
+
+  const ip = request.headers.get("CF-Connecting-IP");
+  if (ip) {
+    formData.append("remoteip", ip);
+  }
+
+  try {
+    const response = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (!response.ok) {
+      console.error("turnstile verification request failed", response.status);
+      return { success: false };
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error("turnstile verification failed", error);
+    return { success: false };
+  }
 }
 
 function escapeXml(value) {
