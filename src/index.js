@@ -2,11 +2,15 @@ const sitemapRoutes = ["/"];
 const servers = [
   { name: "SoulRealms", address: "play.soulrealms.net" },
   { name: "RealmSMP", address: "play.realmsmp.net" },
+  { name: "ViteSMP", address: "play.vitesmp.net" },
+  { name: "Gapple", address: "play.gapple.gg" },
   { name: "ForgottenSMP", address: "play.forgottensmp.net" },
+  { name: "EmeraldSMP", address: "play.emeraldsmp.net" },
   { name: "Hoplite", address: "play.hoplite.gg" },
   { name: "LeoneMC", address: "play.leonemc.net" },
   { name: "MineHeart", address: "play.mineheart.net" },
   { name: "ZedarMC", address: "play.zedarmc.com" },
+  { name: "Skyblock Isles", address: "play.skyblockisles.net" },
 ];
 
 export default {
